@@ -1,0 +1,88 @@
+{# begin {templatelocation} #}
+<script src="{site_url}/javascript/addons/character-counter/jquery.charactercounter.js"></script>
+<form class="uk-form uk-form-horizontal uk-margin" action="{site_admin_url}/group.php" method="post">
+			<input type="hidden" name="grp_gl_core" value="{group_core}">
+			<input type="hidden" name="grp_id" value="{group_id}">
+			<input type="hidden" name="chk_showall" value="{show_all}">
+			<input type="hidden" name="{gltoken_name}" value="{gltoken}">
+
+	<fieldset class="uk-margin">
+		<div class="uk-form-row">
+			<label class="uk-form-label" for="grp_name">{lang_groupname}</label>
+			<div class="uk-form-controls">
+				{groupname_static}
+				<input type="{groupname_inputtype}" class="required uk-form-width-large" maxlength="50" id="grp_name" name="grp_name" value="{group_name}">
+			</div>
+		</div>
+
+		<div class="uk-form-row">
+			<label class="uk-form-label" for="grp_descr">{lang_description}</label>
+			<div class="uk-form-controls">
+				<input type="text" class="uk-form-width-large required" maxlength="255" id="grp_descr" name="grp_descr" value="{group_description}">
+				<div class="uk-form-help-block uk-margin-small-left">
+					<span class="uk-text-muted uk-text-small">{$LANG_ADMIN[remaining_chars]}<span id="grp_descr-count" class="uk-text-muted uk-text-small"></span></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="uk-form-row {hide_adminoption}">
+			<label class="uk-form-label" for="chk_grpadmin">{lang_admingroup}</label>
+			<div class="uk-form-controls">
+				<input type="checkbox" id="chk_grpadmin" name="chk_grpadmin" value="1" {chk_adminuse}>
+				<span class="uk-text-small">{lang_admingrp_msg}</span>
+			</div>
+		</div>
+
+		<div class="uk-form-row" {hide_defaultoption}>
+			<label class="uk-form-label" for="chk_grpdefault">{lang_defaultgroup}</label>
+			<div class="uk-form-controls">
+				<input type="checkbox" id="chk_grpdefault" name="chk_grpdefault" value="1" {chk_defaultuse}>
+				<span class="uk-text-small">{lang_defaultgrp_msg}</span>
+				<input type="checkbox" id="chk_applydefault" name="chk_applydefault" value="1">
+				<span class="uk-text-small">{lang_applydefault_msg}</span>
+			</div>
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>{lang_securitygroups}</legend>
+
+		<div class="uk-panel uk-panel-box uk-margin">
+			{lang_securitygroupmsg}
+		</div>
+		{group_options}
+	</fieldset>
+
+	<fieldset>
+		<legend>{lang_rights}</legend>
+		<div class="uk-panel uk-panel-box uk-margin">
+			{lang_rightsmsg}
+		</div>
+
+		<table class="uk-table uk-table-striped uk-table-hover">
+			{rights_options}
+		</table>
+	</fieldset>
+
+	<div class="uk-form-row">
+		<div class="uk-grid uk-margin-top">
+			<div class="uk-width-small-3-4">
+			<button class="uk-button uk-button-success" type="submit" value="{lang_save}" name="save">{lang_save}</button>
+			<button class="uk-button" type="submit" value="{lang_cancel}" name="cancel">{lang_cancel}</button>
+		</div>
+		<div class="uk-width-small-1-4 uk-text-right">
+{!if delete_option}
+			<button class="uk-button uk-button-danger" type="submit" value="{$LANG_ADMIN[delete]}" onclick="return confirm('{$LANG_ACCESS[confirm1]}');">{$LANG_ADMIN[delete]}</button>
+{!endif}
+</div>
+		</div>
+	</div>
+</form>
+<script>
+	$(function(){
+		$("#grp_descr").characterCounter({
+			limit: '255',
+			counterSelector: '#grp_descr-count'
+		});
+	});
+</script>
+{# end {templatelocation} #}

@@ -1,0 +1,78 @@
+{# begin {templatelocation} #}
+<a id="comments"></a>
+
+{!if info_message}
+	<div class="uk-margin">&nbsp;</div>
+	{info_message}
+{!endif}
+
+<div class="uk-text-center uk-margin-bottom">
+	<ul class="tm-article-meta uk-text-center">
+		<li>{start_storylink_anchortag}<strong>{story_title}</strong>{end_storylink_anchortag}</li>
+		<li>{num_comments} {lang_comments}</li>
+
+		{!if subscribe}
+		<li><a class="uk-form-small" href="{subscribe_url}">{subscribe_text}</a></li>
+		{!endif}
+	</ul>
+</div>
+
+{!if comment_option_text}
+<div class="uk-alert uk-alert-danger uk-text-center">{comment_option_text}</div>
+{!endif}
+
+<nav class="uk-clearfix uk-navbar uk-visible@s uk-margin">
+	<div class="uk-navbar-right">
+		<div class="uk-navbar-content">
+			<form class="uk-form uk-margin-remove uk-display-inline-block" action="{parent_url}" method="post">
+				{hidden_field}
+				<input type="hidden" name="type" value="{comment_type}">
+
+{!if order_selector}
+				{order_selector}
+{!endif}
+{!if mode_selector}
+				{mode_selector}
+{!endif}
+				<button class="uk-button-primary" type="submit" value="{lang_refresh}">{lang_refresh}</button>
+			</form>
+		</div>
+	</div>
+
+	<div class="uk-navbar-content">
+		<form action="{site_url}/comment.php#comment_entry" method="post" class="uk-form uk-margin-remove uk-display-inline-block">
+			<input type="hidden" name="sid" value="{sid}">
+			<input type="hidden" name="pid" value="0">
+			<input type="hidden" name="type" value="{comment_type}">
+			<input type="hidden" name="title" value="{comment_title}">
+{!!if {reply_hidden_or_submit} != 'hidden' !!}
+			<button class="uk-button-success" type="{reply_hidden_or_submit}" name="reply" value="{lang_reply}">{lang_reply}</button>
+{!else}
+			<strong>{$LANG01[83]}</strong>
+{!endif}
+		</form>
+	</div>
+</nav>
+
+<div class="uk-visible@s">
+	<form class="uk-form uk-margin-remove uk-display-inline-block" action="{parent_url}" method="post">
+		{hidden_field}
+		<input type="hidden" name="type" value="{comment_type}">
+		{order_selector}
+		{mode_selector}
+		<button class="uk-button-primary uk-button-small submit" type="submit" value="{lang_refresh}">{lang_refresh}</button>
+	</form>
+
+	<div class="uk-margin uk-text-center">
+		<form action="{site_url}/comment.php#comment_entry" method="post" class="uk-form uk-margin-remove uk-display-inline-block">
+{!!if {reply_hidden_or_submit} != 'hidden' !!}
+			<button class="uk-button-success uk-button-small" type="{reply_hidden_or_submit}" name="reply" value="{lang_reply}">{lang_reply}</button>
+{!endif}
+			<input type="hidden" name="sid" value="{sid}">
+			<input type="hidden" name="pid" value="0">
+			<input type="hidden" name="type" value="{comment_type}">
+			<input type="hidden" name="title" value="{comment_title}">
+		</form>
+	</div>
+</div>
+{# end {templatelocation} #}

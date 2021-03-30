@@ -1,0 +1,25 @@
+{# begin {templatelocation} #}
+{search_menu}
+{!if form_url}
+<form class="uk-width-1-1" action="{form_url}" method="post">
+    {formfields_top}
+{!endif}
+    <table class="uk-table tm-table uk-table-hover uk-table-striped uk-table-small uk-table-justify uk-width-1-1">
+        <tr>
+            {header_row}
+        </tr>
+            {item_row}
+            {footer_row}
+            {action_row}
+    </table>
+{!if form_url}
+{!if formfields_bottom}
+    <div>
+        {formfields_bottom}
+    </div>
+{!endif}
+</form>
+{!endif}
+<p class="uk-text-center" style="{show_message}"><span class="uk-text-bold">{message}</span></p>
+{google_paging}
+{# end {templatelocation} #}

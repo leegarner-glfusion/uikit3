@@ -1,0 +1,187 @@
+{# begin {templatelocation} #}
+<script src="{site_url}/javascript/configmanager.js"></script>
+<script src="{site_url}/javascript/addons/autocomplete/jquery.autocomplete.min.js"></script>
+
+<div id="configuration">
+    <form id="config" method="post" action="configuration.php" name="group">
+        <input type="hidden" value="{open_group}" name="conf_group">
+        <input type="hidden" value="" name="subgroup">
+        <input type="hidden" value="" name="activetab">
+        <input type="hidden" name="{sec_token_name}" value="{sec_token}">
+    </form>
+
+<nav class="uk-navbar uk-margin-bottom uk-visible@s">
+    <a href="#" class="uk-navbar-toggle" uk-toggle="{target:'#admin-side-config'}">
+    </a>
+    <div class="uk-navbar-content">{group_name} / {subgroup_active_name}</div>
+    <div class="uk-navbar-content uk-navbar-flip">
+        <input type="text" name="navconfigitem" id="navautocomplete">
+    </div>
+</nav>
+<div id="admin-side-config" class="uk-offcanvas uk-visible-small">
+    <div class="uk-offcanvas-bar">
+        <div class="uk-card">
+            {config_menu}
+        </div>
+    </div>
+</div>
+
+    <div class="uk-grid uk-margin-large-bottom">
+        <div class="uk-width-1-4@m uk-visible@m">
+
+            <div class="uk-card uk-card-default uk-margin-remove-bottom">
+                <div class="uk-panel-title">{lang_search}</div>
+                <input type="text" name="configitem" id="autocomplete"/>
+            </div>
+
+            <div class="uk-panel uk-card-default uk-margin-small">{config_menu}</div>
+        </div>
+        <div class="uk-width-3-4@m uk-width-1-1@s">
+{!if change_block}
+            <div class="uk-alert" data-uk-alert>
+                <a href="#" class="uk-alert-close uk-close"></a>
+                {lang_changes_made}:
+                {change_block}
+            </div>
+{!endif}
+            <form id="formsubgroup" class="uk-form-horizontal" action="{site_admin_url}/configuration.php" method="post" name="subgroup">
+                <input type="hidden" id="conf_group" name="conf_group" value="{open_group}">
+                <input type="hidden" id="sub_group" name="sub_group" value="{open_sg}">
+              <input type="hidden" id="activetab" value="" id="activetab" name="activetab">
+              <input type="hidden" id="fieldname" value="" name="fieldname">
+                <input type="hidden" name="{sec_token_name}" value="{sec_token}">
+                <input type="hidden" name="form_submit" value="true">
+                <div id="ce_{subgroup_name}">
+                    <div id="tabs">
+                        <ul class="uk-subnav uk-subnav-pill" uk-switcher="{connect:'#tabdata'}">
+    <!-- BEGIN tabs -->
+                            <li id="sg_{index}" class="{class}"><a href="#{index}">{tab}</a></li>
+    <!-- END tabs -->
+                        </ul>
+
+                        <ul id="tabdata" class="uk-switcher uk-margin">
+    <!-- BEGIN fieldset -->
+                        <li>
+                        <div id="{index}" style="overflow:hidden;">
+                            <fieldset>
+                                <legend class="title" style="padding-bottom:0">{fs_display}</legend>
+    <!-- BEGIN notes -->
+                                <div class="notes">
+                                    <h4>{fs_display}</h4>
+                                    <p class="last">{fs_help}</p>
+                                    <span class="uk-text-small">{fs_warning}</span>
+                                </div>
+    <!-- END notes -->
+                                <table class="uk-table">
+                                    {fs_contents}
+                                </table>
+                            </fieldset>
+                        </div>
+                        </li>
+    <!-- END fieldset -->
+                    </div>
+                </div>
+
+                <div class="uk-grid uk-margin">
+                    <div class="uk-width-1-1@s">
+                        <button class="uk-button uk-button-success" type="submit" value="{lang_save_changes}">{lang_save_changes}</button>
+                        <button class="uk-button uk-button-default cancel" type="reset" name="form_reset" value="{lang_reset_form}">{lang_reset_form}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    var ConfigDocUrl = '{confighelpurl}';
+
+    $('[data-uk-switcher]').on('show.uk.switcher', function(event, area){
+            var id = $(area).attr('id');
+            $('#activetab').val(id);
+    });
+
+    $(document).ready(function() {
+        var highlight = "{highlight}";
+        if ( highlight != "" ) {
+            $("#" + highlight).closest('tr').css('background-color','#FFFF00');
+        }
+        $('.tooltip_cfg').tooltipster({
+            contentAsHTML: true,
+            animation: 'fade',
+            trigger: 'click',
+            iconDesktop: true,
+            iconTouch: true,
+            functionBefore: function(origin, continueTooltip) {
+                continueTooltip();
+                var attrHref = ConfigDocUrl;
+                var ajobj = $(this);
+                $.get(attrHref, function(data) {
+                    var confVar = ajobj.attr('id');
+                    var helpVar = confVar.replace("[","_");
+                    helpVar = helpVar.replace("]","");
+//                    if (data.indexOf(confVar) > 0) {
+                    if (data.indexOf(helpVar) > 0) {
+                        var desc = $(data).find('#desc_' + helpVar + ' dd:first').text();
+                        origin.tooltipster('content', desc);
+                    } else {
+                        origin.tooltipster('content', 'No Help Text Found');
+                        console.log('Unable to find help text for desc_%s',confVar);
+                    }
+                });
+            }
+        });
+
+        $('togglepw').onclick = function(){
+            alert('we clicked it');
+          var x = document.getElementsByClassName('passwd');
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+        };
+
+
+    });
+
+    var acdata = {autocomplete_data};
+    $('#autocomplete').devbridgeAutocomplete({
+    lookup: acdata,
+    groupBy: 'category',
+        formatResult: function (suggestion, currentValue) {
+            return suggestion.value;
+        },
+    onSelect: function (suggestion) {
+        $('#conf_group').val(suggestion.data.group);
+            $('#sub_group').val(suggestion.data.sg);
+            $('#activetab').val(suggestion.data.tab);
+            $('#fieldname').val(suggestion.data.confvar);
+            $('#formsubgroup').submit();
+    }
+    });
+    $('#navautocomplete').devbridgeAutocomplete({
+    lookup: acdata,
+    groupBy: 'category',
+        formatResult: function (suggestion, currentValue) {
+            return suggestion.value;
+        },
+    onSelect: function (suggestion) {
+        $('#conf_group').val(suggestion.data.group);
+            $('#sub_group').val(suggestion.data.sg);
+            $('#activetab').val(suggestion.data.tab);
+            $('#fieldname').val(suggestion.data.confvar);
+            $('#formsubgroup').submit();
+    }
+    });
+    function toggler(e) {
+        var myClass = $(e).attr("class");
+        if (myClass == 'uk-icon uk-icon-eye') {
+            $(".password").prop("type", "text");
+            $(e).prop('class','uk-icon uk-icon-eye-slash');
+        } else {
+            $(".password").prop("type", "password");
+            $(e).prop('class','uk-icon uk-icon-eye');
+        }
+    }
+</script>
+{# end {templatelocation} #}

@@ -1,0 +1,19 @@
+{# begin {templatelocation} #}
+<div id="navcontainer" class="uk-visible@m">
+  <ul id="navlist" class="uk-tab">
+    {menuitems}
+  </ul>
+</div>
+<div class="uk-hidden@s">
+  <ul class="uk-subnav uk-subnav-pill">
+    <li class="uk-tab-responsive">
+      <a href="#">{$LANG01[menu]}</a>
+      <div class="uk-dropdown uk-dropdown-close uk-dropdown-small" uk-dropdown>
+        <ul class="uk-nav uk-nav-dropdown">
+          {menuitems}
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
+{# end {templatelocation} #}

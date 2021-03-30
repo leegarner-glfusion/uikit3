@@ -1,0 +1,8 @@
+{# begin {templatelocation} #}
+<div class="uk-margin">
+    <label class="uk-form-label" for="new_username">{lang_username}</label>
+    <div class="uk-form-controls uk-form-controls-text">
+        <input class="uk-input uk-width-1-1" type="text" id="new_username" name="new_username" value="{new_username_value}">
+    </div>
+</div>
+{# end {templatelocation} #}

@@ -1,0 +1,35 @@
+{$LANG04[168]} {site_name}
+
+
+{$LANG04[170]}
+
+----------------------------
+{$LANG04[2]}: {username}
+
+{lang_site_or_password}: {!if site_link_url}{site_link_url}{!else}{passwd}{!endif}
+
+----------------------------
+
+{lang_activation}
+
+
+{!if lang_button_text}
+  {lang_button_text} - {url}
+{!else}
+  {$LANG04[207]} - {site_url}
+{!endif}
+
+
+{!if localuser}}
+{$LANG04[173]}
+{!endif}
+
+{$LANG04[174]}
+
+{site_name}
+
+{site_url}
+
+
+{$LANG04[159]}
+

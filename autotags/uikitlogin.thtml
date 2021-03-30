@@ -1,0 +1,24 @@
+{# begin {templatelocation} #}
+{!if login_button}
+    <button class="uk-button-primary" uk-toggle="target: #modalOpen" type="button">Login</button>
+<div id="modalOpen" uk-modal>
+    <div class="uk-modal-dialog uk-modal-dialog-medium uk-modal-body">
+        <a href="#" class="uk-modal-close uk-close floatright">Close</a>
+        {login_form}
+    </div>
+</div>
+{!else}
+<ul class="uk-navbar-nav tm-navbar-nav">
+    <li>
+        <a href="#">{lang_header}&nbsp;<i uk-icon="triangle-down"></i></a>
+        <div class="uk-navbar-dropdown tm-navbar-dropdown">
+            <ul class="uk-nav uk-navbar-dropdown-nav tm-navbar-nav-dropdown">
+<!-- BEGIN MenuItems -->
+                <li><a href="{url}">{label}</a></li>
+<!-- END MenuItems -->
+            </ul>
+        </div>
+    </li>
+</ul>
+{!endif}
+{# begin {templatelocation} #}

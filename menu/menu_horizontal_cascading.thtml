@@ -1,0 +1,35 @@
+{# begin {templatelocation} #}
+{# horizontal cascading menu template #}
+{!if wrapper}
+<ul id="sm-{menuname}" class="uk-navbar-nav tm-navbar-nav uk-visible@m" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+{!endif}
+<!-- BEGIN Elements -->
+    <li>
+{!if haschildren}
+        <a><span itemprop="name">{label}</span>&nbsp;<i uk-icon="triangle-down"></i></a>
+{!else}
+        <a href="{url}" itemprop="url" {target}><span itemprop="name">{label}</span></a>
+{!endif}
+{!if haschildren}
+        <div class="uk-navbar-dropdown tm-navbar-dropdown">
+        <ul class="uk-nav uk-navbar-dropdown-nav tm-navbar-nav-dropdown">
+            {children}
+        </ul>
+        </div>
+{!endif}
+    </li>
+<!-- END Elements -->
+{!if wrapper}
+</ul>
+{!if 0}
+    <script>
+        $(function() {
+            $('#sm-{menuname}').smartmenus({
+                showTimeout: 300,
+                showFunction: function($ul, complete) { $ul.fadeIn(425, complete); }
+            });
+        });
+    </script>
+{!endif}
+{!endif}
+{# end {templatelocation} #}

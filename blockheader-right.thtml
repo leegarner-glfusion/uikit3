@@ -1,0 +1,8 @@
+{# begin {templatelocation} #}
+    <div {block_id}>
+      <div class="uk-card tm-bottom-block">
+{!if block_title}
+        <h3 class="uk-card-title">{block_title}</h3>
+{!endif}
+
+{# end {templatelocation} #}

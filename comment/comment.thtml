@@ -1,0 +1,68 @@
+{# begin {templatelocation} #}
+{!if preview_mode}
+<div class="uk-panel uk-panel-box uk-margin-bottom">
+{!else}
+<a id="cid_{cid}"></a>
+<article itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+	<div class="uk-panel uk-panel-box uk-margin-small-bottom" style="margin-left:{indent}px;">
+{!endif}
+<div class="uk-flex uk-comment tm-comment uk-visible-hover">
+{!if author_photo_raw}
+	<div class="uk-margin-right uk-hidden-small">
+		<div class="user-avatar online">
+			<img alt="" class="uk-thumbnail" src="{author_photo_raw}" width="72" height="72">
+		</div>
+	</div>
+{!endif}
+	<div class="uk-flex-item-1">
+		<div class="uk-position-relative">
+			<h4 class="uk-comment-title tm-comment-title" itemprop="author" itemscope itemtype="https://schema.org/Person">
+{!if author_url}
+				<a href="{author_url}">
+{!endif}
+					<span itemprop="name">{author_fullname}</span>
+{!if author_url}
+				</a>
+{!endif}
+
+{!if ipaddress}
+  {!if iplookup_link}
+				<a href="{iplookup_link}">{ipaddress}</a>
+  {!else}
+  			{ipaddress}
+  {!endif}
+{!endif}
+			</h4>
+			<div class="uk-comment-meta tm-comment-meta">
+				<time class="comment-time" datetime="{iso8601_date}" itemprop="datePublished">
+					{date}
+				</time>
+			</div>
+{!if preview_mode}
+{!else}
+			<div class="uk-position-top-right uk-hidden">
+{!if reply_link}
+				<a href="{reply_link}" title="{lang_reply}" data-uk-tooltip class="uk-button-mini uk-button-primary"><i class="uk-icon-mail-reply"></i></a>
+{!endif}
+{!if edit_link}
+				<a href="{edit_link}" title="{lang_edit}" data-uk-tooltip class="uk-button-mini uk-button-success"><i class="uk-icon-edit"></i></a>
+{!endif}
+{!if delete_link}
+				<a href="{delete_link}" title="{lang_delete}" onclick="return confirm('{lang_delete_link_confirm}');" data-uk-tooltip class="uk-button-mini uk-button-danger"><i class="uk-icon-trash-o"></i></a>
+{!endif}
+			</div>
+{!endif}
+		</div>
+		<div class="uk-comment-body tm-comment-body uk-text-break" itemprop="text">
+			{comments}
+		</div>
+	</div>
+</div>
+{!if preview_mode}
+</div>
+{!else}
+</div>
+</article>
+{!endif}
+<div class="uk-clearfix"></div>
+{# end {templatelocation} #}

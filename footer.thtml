@@ -1,0 +1,44 @@
+{# begin {templatelocation} #}
+{# END OF CONTENT AREA #}
+					</main>
+				</div>                              {# end of centercolumn #}
+				{left_blocks}
+			</div>                                {# end of uk-grid #}
+		</div>                                  {# end of uk-container #}
+	</div>                                    {#end of tm-content #}
+
+	<a href="#top" data-uk-scroll>
+		<p id="scroll-to-top" style="display:none;">
+			<i uk-icon="icon:triangle-up;ratio:3"></i>
+		</p>
+	</a>
+	<footer id="tm-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+
+		<div id="tm-block-bottom" class="uk-clearfix">
+			{right_blocks}
+
+{!if adblock_footer}
+		<div class="uk-clearfix uk-text-center uk-margin">
+			{adblock_footer}
+		</div>
+{!endif}
+		</div>
+
+		<div id="tm-block-footer" class="uk-clearfix uk-text-center uk-align-center uk-margin-remove-bottom">
+			<div class="uk-margin-top uk-margin-bottom">
+				<span id="copyright" itemprop="copyrightHolder" itemscope="itemscope" itemtype="http://schema.org/Organization">
+					<span itemprop="name">{copyright_msg}</span>
+				</span>
+				<br>{powered_by} <a href="{glfusion_url}" target="_blank">glFusion CMS</a>
+			</div>
+		</div>
+
+	</footer>
+	{js-footer}
+	{raw-footer}
+	{debugger}
+<script src="https://getuikit.com/migrate.min.js"></script>
+
+</body>
+</html>
+{# end {templatelocation} #}

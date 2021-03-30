@@ -1,0 +1,5 @@
+{# begin {templatelocation} #}
+<a class="uk-navbar-item tm-navbar-item tm-navbar-brand uk-logo uk-visible@m" href="{site_url}" itemprop="url">
+	<span itemprop="name">{site_name}</span>
+</a>
+{# end {templatelocation} #}

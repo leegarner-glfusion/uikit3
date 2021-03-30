@@ -1,0 +1,61 @@
+{# begin {templatelocation} #}
+<nav class="uk-navbar-container tm-admin-navbar uk-margin" uk-navbar>
+    <div class="uk-navbar-left uk-visible@m">
+        <ul class="uk-navbar-nav">
+<!-- BEGIN menu_items -->
+{!if haschildren}
+            <li class="{!if menu_item_active}uk-active{!endif}uk-parent" data-uk-dropdown>
+                <a href="{menu_item_url}">{menu_item_text} <i class="uk-icon uk-icon-caret-down"></i></a>
+                <div class="uk-dropdown uk-dropdown-navbar">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+<!-- BEGIN menu_submenu -->
+                        <li><a href="{sm_url}">{sm_text}</a></li>
+<!-- END menu_submenu -->
+                    </ul>
+                </div>
+{!else}
+                <li {!if menu_item_active} class="uk-active" {!endif}>
+                    <a href="{menu_item_url}">{menu_item_text}</a>
+                </li>
+{!endif}
+            </li>
+<!-- END menu_items -->
+        </ul>
+    </div>
+{!if lang_instructions}
+    <div class="uk-navbar-right uk-visible@s">
+        <ul class="uk-navbar-nav">
+            <li><a class="toggle_inst" href="#"><i uk-icon="icon:question;ratio:1"></i></a></li>
+        </ul>
+    </div>
+{!endif}
+
+    <div class="uk-navbar-item uk-navbar-right uk-hidden@m">
+        <div class="uk-button-dropdown">
+            <button class="uk-button-default" type="button"><i uk-icon="menu"></i>&nbsp;{$LANG01[menu]}&nbsp;<i uk-icon="uk-icon-triangle-down"></i></button>
+        <div class="uk-dropdown uk-dropdown-close" uk-dropdown>
+            <ul class="uk-nav uk-dropdown-nav">
+<!-- BEGIN alt_menu_items -->
+                <li {!if menu_item_active} class="uk-active" {!endif}><a href="{menu_item_url}">{menu_item_text}</a></li>
+<!-- END alt_menu_items -->
+{!if lang_instructions}
+                <li><a class="toggle_inst" href="#"><i uk-icon="icon:question;ratio:.75"></i></a></li>
+{!endif}
+            </ul>
+        </div>
+    </div>
+</nav>
+{!if lang_instructions}
+    <div id="instructions" style="display:none;"  class="uk-alert-primary" uk-alert>
+        <p>{lang_instructions}</p>
+    </div>
+{!endif}
+<script>
+    $(window).load(function() {
+        $( ".toggle_inst" ).click(function() {
+            $( "#instructions" ).slideToggle( "fast" );return false;
+        });
+        $("#instructions").hide();
+    });
+</script>
+{# end {templatelocation} #}

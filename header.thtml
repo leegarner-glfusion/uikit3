@@ -1,0 +1,53 @@
+{# begin {templatelocation} #}
+{meta-header}
+{css-header}
+{js-header}
+{raw-header}
+</head>
+<body style="overflow-y: scroll;" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+    {integrated_comments}
+    <header role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+        <nav class="uk-navbar-container tm-navbar-container" uk-navbar="delay-show:300">
+            <div class="uk-nav uk-navbar-left">
+                <div class="uk-visible@m">{logo_block}</div>
+                {!!autotag menu:navigation !!}
+{!if adblock_header}
+            <span class="uk-align-right uk-hidden@s">{adblock_header}</span>
+{!endif}
+            </div>
+
+            <div class="uk-nav uk-navbar-right">
+                {!!autotag uikitlogin: !!}
+                <div class="uk-navbar-item tm-navbar-item">
+                    <form method="get" action="{site_url}/search.php" class="uk-margin-remove uk-display-inline-block">
+                        <input type="search" class="uk-form-width-small" placeholder="{$LANG09[10]}" autocomplete="off" name="q">
+                        <input type="hidden" name="type" value="all">
+                        <input type="hidden" name="mode" value="search">
+                        <input type="hidden" name="results" value="{num_search_results}">
+                    </form>
+                </div>
+            </div>
+
+            <div class="uk-navbar-right uk-hidden@m">
+            {!!autotag menu:navigation_mobile !!}
+            <div>
+                <a href="{site_url}/search.php" class="tm-navbar-toggle uk-navbar-toggle-icon uk-navbar-toggle" uk-search-icon></a>
+            </div>
+
+            <div class="uk-logo uk-navbar-item tm-navbar-item tm-navbar-brand-oc uk-navbar-center uk-hidden@s"> 
+                <a href="{site_url}">{site_name}</a>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    {!!autotag staticpage_content:homepage-header where:home !!}
+
+    <div class="tm-content">
+        <div class="uk-container tm-container uk-margin-large-bottom">
+            <div class="uk-grid uk-margin-top uk-margin-large-bottom">
+                <div class="{centercolumn}">
+                    <main id="main-content" role="main" itemscope="itemscope" itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
+                        {info_block}
+                        {content}
+                        {# end {templatelocation} #}

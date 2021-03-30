@@ -1,0 +1,93 @@
+{# begin {templatelocation} #}
+{!if show_htmleditor}
+{wysiwyg}
+{!endif}
+
+<form class="uk-form id="frmstory" name="frmstory" action="{site_url}/submit.php" method="post">
+	<input type="hidden" name="postmode" value="{postmode}">
+	<input type="hidden" name="advanced_editor_mode" id="advanced_editor_mode" value="{advanced_editor_mode}">
+
+	<input type="hidden" name="type" value="story">
+	<input type="hidden" name="uid" value="{story_uid}">
+	<input type="hidden" name="sid" value="{story_sid}">
+	<input type="hidden" name="date" value="{story_date}">
+	<input type="hidden" id="sectoken" name="{security_token_name}" value="{security_token}">
+	{spamx}
+
+	<ul class="uk-tab" data-uk-tab="{connect:'#story-form'}">
+		<li><a href="#">{$LANG24[80]}</a></li>
+		<li  {!if show_preview} class="uk-active" {!endif}><a href="#">{$LANG24[79]}</a></li>
+	</ul>
+
+	<div class="uk-form-row uk-margin-top">
+		<div id="story_id" class="uk-card uk-card-body uk-margin">
+			<div class="uk-grid ">
+				<div class="uk-width-2-3@m">
+					<strong>{lang_title}</strong>&nbsp;<input class="uk-width-1-1" id="title" type="text" name="title" value="{story_title}">
+				</div>
+				<div class="uk-width-1-3@m">
+					<strong>{lang_topic}</strong><br>
+					<select name="tid">
+						{story_topic_options}
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<ul id="story-form" class="uk-switcher uk-margin">
+			<li>
+				<div id="text_editor uk-margin-top">
+					<div id="textbox">
+						<div class="uk-text-medium uk-text-bold uk-margin">{lang_introtext}</div>
+{!if wysiwyg}
+						<div class="uk-margin-small">
+							<button id="visual1" type="button" class="uk-button-success" value="{visual_editor}" onclick="won('introtext');$('#std1').attr('class','uk-button');$('#visual1').attr('class','uk-button-success');$('#advanced_editor_mode').val('1');">{visual_editor}</button>
+							<button id="std1" type="button" class="uk-button-default" value="{html_editor}"  onclick="woff('introtext');$('#visual1').attr('class','uk-button');$('#std1').attr('class','uk-button-success');$('#advanced_editor_mode').val('0');">{html_editor}</button>
+						</div>
+{!endif}
+						<textarea class="uk-form-width-large" id="introtext" name="introtext" rows="24" style="width:100%;">{story_introtext}</textarea>
+					</div>
+
+					<div class="uk-text-medium uk-text-bold uk-margin">{lang_bodytext}</div>
+{!if wysiwyg}
+					<div class="uk-margin-small">
+						<button id="visual2" type="button" class="uk-button-success" value="{visual_editor}" onclick="won('bodytext');$('#std2').attr('class','uk-button');$('#visual2').attr('class','uk-button-success');$('#advanced_editor_mode').val('1');">{visual_editor}</button>
+						<button id="std2" type="button" class="uk-button-default" value="{html_editor}"  onclick="woff('bodytext');$('#visual2').attr('class','uk-button');$('#std2').attr('class','uk-button-success');$('#advanced_editor_mode').val('0');">{html_editor}</button>
+					</div>
+{!endif}
+					<textarea id="bodytext" class="uk-form-width-large" name="bodytext" rows="24" style="width:100%;">{story_bodytext}</textarea>
+				</div>
+
+				<div class="uk-form-row uk-margin">
+					<button type="button" class="uk-button-mini uk-button-primary" data-uk-toggle="{target:'#allowed_html'}">
+						Show Allowed Content
+					</button>
+					<div id="allowed_html" class="uk-hidden">{allowed_html}</div>
+				</div>
+			</li>
+
+			<li>
+				<div id="preview">
+					<div class="uk-alert uk-alert-warning" data-uk-alert>
+						<a href="#" class="uk-alert-close uk-close"></a>
+						Select the <span class="uk-text-bold">Preview</span> button below to refresh the preview display.
+					</div>
+					<div class="uk-card uk-card-body uk-margin">
+						{preview_content}
+					</div>
+				</div>
+
+			</li>
+		</ul>
+
+		{captcha}
+
+		<div class="uk-clearfix uk-margin"></div>
+
+		<button class="uk-button-primary" type="submit" name="preview" value="{lang_preview}">{lang_preview}</button>
+{!if save_button}
+		<button class="uk-button-success" type="submit" name="save" value="{$LANG12[8]}">{$LANG12[8]}</button>
+{!endif}
+		<button class="cancel uk-button-default" type="submit" value="cancel" name="cancel">{$LANG_ADMIN[cancel]}</button>
+	</form>
+	{# end {templatelocation} #}

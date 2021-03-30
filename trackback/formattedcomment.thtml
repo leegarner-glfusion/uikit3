@@ -1,0 +1,11 @@
+{# begin {templatelocation} #}
+<article class="uk-comment">
+	<header class="uk-comment-header">
+		<h4 class="uk-comment-title"><a href="{trackback_url}" target="_blank">{trackback_title}</a> {trackback_from_blog_name}</h4>
+	</header>
+	<div class="uk-comment-body">
+		<p>{lang_tracked_on} {trackback_date} {delete_option}		</p>
+		<p>{trackback_excerpt_readmore}{excerpt_br}</p>
+	</div>
+</article>
+{# end {templatelocation} #}

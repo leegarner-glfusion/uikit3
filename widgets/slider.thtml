@@ -1,0 +1,54 @@
+<div class="slider-wrapper theme-default">
+	<div id="slider-{rand}" class="nivoSlider">
+
+<!-- BEGIN images -->
+
+{!if !caption}
+{!if link}
+		<a href="{link}">
+{!endif}
+{!endif}
+		<img src="{imageurl}" alt=""
+		{!if caption}
+		  title="#slider-{rand}-slide{slidecounter}-caption"
+		{!endif}
+		>
+{!if !caption}
+{!if link}
+		</a>
+{!endif}
+{!endif}
+
+<!-- END images -->
+
+	</div>
+
+<!-- BEGIN captions -->
+	<div id="slider-{rand}-slide{slidecounter}-caption"  class="nivo-html-caption">
+{!if link}
+		<a href="{link}">
+{!endif}
+
+			{caption}
+
+{!if link}
+		</a>
+{!endif}
+
+	</div>
+<!-- END captions -->
+
+</div>
+
+<script>
+$(window).load(function() {
+$('#slider-{rand}').nivoSlider({
+
+<!-- BEGIN options -->
+
+{option}
+
+<!-- END options -->
+});
+});
+</script>
