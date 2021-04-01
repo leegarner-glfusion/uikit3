@@ -7,18 +7,18 @@
 <body style="overflow-y: scroll;" itemscope="itemscope" itemtype="http://schema.org/WebPage">
     {integrated_comments}
     <header role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
-        <nav class="uk-navbar-container tm-navbar-container" uk-navbar="delay-show:300">
-            <div class="uk-nav uk-navbar-left">
-                <div class="uk-visible@m">{logo_block}</div>
+        {# Navbar for medium and larger screens #}
+        <nav class="uk-visible@m uk-navbar-container tm-navbar-container" uk-navbar="delay-show:300">
+            <div class="uk-navbar-left">
+                <div>{logo_block}</div>
                 {!!autotag menu:navigation !!}
 {!if adblock_header}
-            <span class="uk-align-right uk-hidden@s">{adblock_header}</span>
+                <span class="uk-align-right">{adblock_header}</span>
 {!endif}
             </div>
-
-            <div class="uk-nav uk-navbar-right">
+            <div class="uk-navbar-right uk-visible@m">
                 {!!autotag uikitlogin: !!}
-                <div class="uk-navbar-item tm-navbar-item">
+                <div class="uk-navbar-item tm-navbar-item uk-visible@m">
                     <form method="get" action="{site_url}/search.php" class="uk-margin-remove uk-display-inline-block">
                         <input type="search" class="uk-form-width-small" placeholder="{$LANG09[10]}" autocomplete="off" name="q">
                         <input type="hidden" name="type" value="all">
@@ -27,16 +27,20 @@
                     </form>
                 </div>
             </div>
+        </nav>
 
-            <div class="uk-navbar-right uk-hidden@m">
-            {!!autotag menu:navigation_mobile !!}
-            <div>
+        {# Small-screen navbar #}
+        <nav class="uk-hidden@m uk-navbar-container tm-navbar-container" uk-navbar="delay-show:300">
+            <div class="uk-navbar-left">
+                {!!autotag menu:navigation_mobile !!}
+            </div>
+
+            <div class="uk-navbar-right">
                 <a href="{site_url}/search.php" class="tm-navbar-toggle uk-navbar-toggle-icon uk-navbar-toggle" uk-search-icon></a>
-            </div>
 
-            <div class="uk-logo uk-navbar-item tm-navbar-item tm-navbar-brand-oc uk-navbar-center uk-hidden@s"> 
-                <a href="{site_url}">{site_name}</a>
-            </div>
+                <div class="uk-logo uk-navbar-item tm-navbar-item tm-navbar-brand-oc uk-navbar-center">
+                    <a href="{site_url}">{site_name}</a>
+                </div>
             </div>
         </nav>
     </header>
