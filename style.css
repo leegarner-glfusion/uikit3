@@ -600,6 +600,12 @@ p.tm-article-meta {
 .uk-button {
     border-radius: 4px;
 }
+.uk-button-mini {
+  min-height: 20px;
+  padding: 0 6px;
+  line-height: 18px;
+  font-size: 11px;
+}
 
 /* social share */
 .uk-button.uk-button-facebook,
@@ -2749,7 +2755,9 @@ header nav button,
 .uk-navbar-toggle {
     min-height: 40px;
 }
-
+.tm-navbar-toggle {
+    color: #eee;
+}
 .cc-grid-item {
     text-align: center;
     margin-top: 20px;
@@ -2761,7 +2769,7 @@ header nav button,
     width: inherit;
 }*/
 
-/* Darken inputs and other text */
+/* Darken inputs and other text. Light grey against white doesn't work well. */
 .uk-input, .uk-select, .uk-textarea {
     color: #333;
     border: 1px solid #666;
