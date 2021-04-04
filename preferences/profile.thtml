@@ -119,25 +119,23 @@
 {!if social_followme_enabled}
             <fieldset class="uk-fieldset">
                 <legend class="uk-legend">{$LANG04[198]}</legend>
-                <div class="uk-card uk-card-body uk-card-body-primary uk-margin">
+                <div class="uk-card uk-margin">
                     {$LANG04[199]}
                 </div>
-                <div class="uk-card uk-card-body uk-margin-bottom">
-                    <div class="uk-margin uk-text-bold">
-                        <label class="uk-form-label">{$LANG04[200]}</label>
-                        <div class="uk-form-label">
-                            {$LANG04[201]}
-                        </div>
-                    </div>
-                    <!-- BEGIN social_links -->
-                    <div class="uk-margin" style="clear:both;">
-                        <label class="uk-form-label" for="{service}_username">{service_display_name}</label>
-                        <div class="uk-form-controls">
-                            {service_url}&nbsp;<input type="text" id="{service}_username" name="{service}_username" value="{service_username}" />
-                        </div>
-                    </div>
-                    <!-- END social_links -->
-                </div>
+				<table class="uk-table uk-table-small">
+					<tr>
+						<th>{$LANG04[200]}</th>
+						<th>{$LANG04[201]}</th>
+					</tr>
+<!-- BEGIN social_links -->
+					<tr>
+						<td>{service_display_name}</td>
+						<td>
+							{service_url}&nbsp;<input type="text" id="{service}_username" name="{service}_username" value="{service_username}" />
+						</td>
+					</tr>
+<!-- END social_links -->
+                </table>
             </fieldset>
 {!endif}
 

@@ -1,5 +1,5 @@
 {# begin {templatelocation} #}
-<div class="uk-form-row">
+<div class="uk-margin">
 	<label class="uk-form-label" for="resynch">{lang_resynch}</label>
 	<div class="uk-form-controls">
 		<input type="checkbox" id="resynch" name="resynch" {resynch_checked} />
@@ -7,7 +7,7 @@
 </div>
 
 {!if remote_account_type}
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<label class="uk-form-label">{lang_remote_service}</label>
 		<div class="uk-form-controls">
 			{remote_account_type}
@@ -16,7 +16,7 @@
 {!endif}
 
 {!if merge_account}
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<label class="uk-form-label" for="merge">{$LANG04[192]}</label>
 		<div class="uk-form-controls">
 			<input type="checkbox" id="merge" name="merge" >
@@ -28,7 +28,7 @@
 			</p>
 		</div>
 	</div>
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<label class="uk-form-label" for="localp">{$LANG04[191]}</label>
 		<div class="uk-form-controls">
 			<input type="password" id="localp" name="localp" >
@@ -37,7 +37,7 @@
 {!endif}
 
 {!if unlink_accounts}
-	<div class="uk-form-row uk-margin">
+	<div class="uk-margin uk-margin">
 		<label class="uk-form-label" for="unmerge">{$LANG04[204]}</label>
 		<div class="uk-form-controls">
 			<input type="checkbox" id="unmerge" name="unmerge">

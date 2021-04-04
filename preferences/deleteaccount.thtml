@@ -6,7 +6,7 @@
 </div>
 
 {!if local-acct}
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<label class="uk-form-label" for="current_password">{$LANG04[110]}</label>
 		<div class="uk-form-controls">
 			<input type="password" placeholder="{$LANG04[110]}" class="uk-form-danger" name="current_password">
@@ -14,7 +14,7 @@
 	</div>
 {!endif}
 
-<div class="uk-form-row">
+<div class="uk-margin">
 	<label class="uk-form-label" for="old_passwd">{lang_deleteoption}</label>
 	<div class="uk-form-controls">
 		<button class="uk-button uk-button-danger" type="submit" name="btnsubmit" value="{lang_button_delete}">{lang_button_delete}</button>

@@ -9,19 +9,19 @@
     <div class="uk-margin">
         <label class="uk-form-label" for="noicons">{lang_noicons}</label>
         <div class="uk-form-controls uk-form-controls-text">
-            <input type="checkbox" id="noicons" name="noicons" {noicons_checked} />
+            <input class="uk-checkbox" type="checkbox" id="noicons" name="noicons" {noicons_checked} />
         </div>
     </div>
     <div class="uk-margin">
         <label class="uk-form-label" for="noboxes">{lang_noboxes}</label>
         <div class="uk-form-controls uk-form-controls-text">
-            <input type="checkbox" id="noboxes" name="noboxes" {noboxes_checked} />
+            <input class="uk-checkbox" type="checkbox" id="noboxes" name="noboxes" {noboxes_checked} />
         </div>
     </div>
     <div class="uk-margin">
         <label class="uk-form-label" for="maxstories">{lang_maxstories}</label>
         <div class="uk-form-controls uk-form-controls-text">
-            <input type="text" size="3" maxlength="3" id="maxstories" name="maxstories" value="{maxstories_value}" />
+            <input class="uk-input" type="text" size="3" maxlength="3" id="maxstories" name="maxstories" value="{maxstories_value}" />
         </div>
     </div>
     <div class="uk-margin">

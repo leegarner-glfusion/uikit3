@@ -1,6 +1,6 @@
 {# begin {templatelocation} #}
 <form class="uk-form uk-form-stacked tm-loginform" action="{site_url}/users.php" method="post">
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<div class="uk-form-controls uk-text-center">
 			<div class="uk-form-icon">
 				<i class="uk-icon-user"></i>
@@ -8,7 +8,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<div class="uk-form-controls uk-text-center">
 			<div class="uk-form-icon">
 				<i class="uk-icon-lock"></i>
@@ -18,21 +18,21 @@
 	</div>
 	{captcha}
 {!if services}
-	<div class="uk-form-row uk-text-left">
+	<div class="uk-margin uk-text-left">
 		{services}
 	</div>
 {!endif}
 
-	<div class="uk-form-row uk-text-center">
+	<div class="uk-margin uk-text-center">
 		<button class="uk-button-primary uk-form-width-small" type="submit" value="{lang_login}">{lang_login}</button>
 	</div>
 
-	<div class="uk-form-row">
+	<div class="uk-margin">
 {!if lang_signup}
 		<a class="uk-link uk-link-muted" href="{site_url}/users.php?mode=new" rel="nofollow"><i class="uk-icon-user">&nbsp;</i>{$LANG12[3]}</a>
 {!endif}
 	</div>
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<i class="uk-icon-question">&nbsp;</i><a class="uk-link uk-link-muted" href="{site_url}/users.php?mode=getpassword" rel="nofollow">{$LANG04[189]}</a>
 	</div>
 {!if oauth_login}
