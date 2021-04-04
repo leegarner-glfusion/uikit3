@@ -20,13 +20,13 @@
         {subscription_panel}
         {plugin_panel}
 
-        <div class="uk-form-row">
+        <div class="uk-margin">
             <div class="uk-grid uk-margin-top">
-                <div class="uk-width-small-3-4">
+                <div class="uk-width-3-4@s">
                     <button class="uk-button uk-button-success" type="submit" id="save" name="save" value="{lang_save}">{lang_save}</button>
-                    <button class="uk-button cancel" type="submit" value="{lang_cancel}" name="cancel">{lang_cancel}</button>
+                    <button class="uk-button uk-button-default cancel" type="submit" value="{lang_cancel}" name="cancel">{lang_cancel}</button>
                 </div>
-                <div class="uk-width-1-4 uk-text-right">
+                <div class="uk-width-1-4@s uk-text-right">
 {!if delete_option}
                     <button class="uk-button uk-button-danger cancel" type="submit" value="{$LANG_ADMIN[delete]}" name="delete" onclick="return doubleconfirm('{$LANG28[104]}','{$LANG28[109]}');">{$LANG_ADMIN[delete]}</button>
 {!endif}

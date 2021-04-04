@@ -1,6 +1,6 @@
 {# begin username & password panel #}
 <div id="pe_namepass" class="jsenabled_show">
-    <fieldset class="uk-fieldset>
+    <fieldset class="uk-fieldset">
         <legend class="uk-legend">{lang_name_legend}</legend>
         <div class="uk-margin">
             <label class="uk-form-label" for="">{lang_userid}</label>
@@ -58,7 +58,7 @@
     </fieldset>
 
 {!if remoteuserenable}
-    <fieldset class="uk-fieldset">
+    <fieldset class="uk-fieldset uk-margin-top">
         <legend class="uk-legend">{lang_remoteuserdata}</legend>
         <div class="uk-margin">
             <label class="uk-form-label" for="remoteusername">{lang_remoteusername}</label>
@@ -74,7 +74,7 @@
         </div>
     </fieldset>
 {!endif}
-    <fieldset class="uk-fieldset">
+    <fieldset class="uk-fieldset uk-margin-top">
         <legend class="uk-legend">{lang_password_email_legend}</legend>
         <div class="uk-margin">
             <label class="uk-form-label" for="newp">{lang_password}</label>
@@ -118,7 +118,7 @@
     </fieldset>
 
 {!if twofactor}
-    <fieldset class="uk-margin-top">
+    <fieldset class="uk-margin-top uk-fieldset">
         <legend>{lang_two_factor}</legend>
         <div class="uk-margin">
             <label class="uk-form-label">{lang_disable_tfa}</label>
