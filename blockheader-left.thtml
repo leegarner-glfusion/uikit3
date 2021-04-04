@@ -1,5 +1,5 @@
 {# begin {templatelocation} #}
-<div {block_id} class="uk-card uk-card-body uk-margin-bottom">
+<div {block_id} class="uk-card uk-margin-bottom">
 {!if block_title}
 	<div class="uk-card-title">
 		{block_title}

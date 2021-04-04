@@ -398,9 +398,10 @@ p.tm-article-meta {
 
 /* bottom footer that holds navigation menu or copyright */
 #tm-block-footer {
-	color:#777;
-	background: #252525;
-	border-top:1px solid #232425
+    color:#777;
+    background: #252525;
+    border-top:1px solid #232425;
+    margin-top: 0px;
 }
 
 #tm-block-footer a:hover {
@@ -2744,7 +2745,10 @@ a.uk-thumbnail:focus {
 .tm-navbar-dropdown-nav > li {
     font-size: inherit;
     padding: 0;
-    padding-left:10px;
+    padding-left:0px;
+}
+.tm-navbar-nav-dropdown > li > a > span {
+    padding: 5px;
 }
 header nav {
     min-height:60px;
@@ -2778,3 +2782,13 @@ header nav button,
     color: inherit;
 }
 
+.tm-card-menu {
+    padding: 0px;
+}
+
+.cc-grid-item {
+    text-align: center;
+    margin-top: 20px;
+    width:100px;
+    height:100px;
+}
