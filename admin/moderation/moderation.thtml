@@ -7,7 +7,7 @@
     <div class="cc-grid-item">
         <div class="uk-margin-remove">
             <a href="{page_url}">
-	        <img src="{page_image}" alt="{option_label}">
+                <img src="{page_image}" alt="{option_label}">
             </a>
         </div>
         <div class="uk-margin-remove">
