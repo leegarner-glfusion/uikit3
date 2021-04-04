@@ -1,0 +1,7 @@
+{# begin {templatelocation} #}
+<ul class="uk-list">
+<!-- BEGIN usermenuItems -->
+    <li><a href="{item_url}">{item_label}</a></li>
+<!-- END usermenuItems -->
+</ul>
+{# end {templatelocation} #}
