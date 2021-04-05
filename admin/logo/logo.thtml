@@ -1,38 +1,38 @@
 {# begin {templatelocation} #}
 <div class="uk-panel uk-panel-box uk-margin">
 	<form class="uk-form uk-form-horizontal" id="logo_admin" name="logo_admin" action="{s_form_action}" method="post" enctype="multipart/form-data">
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="usegraphic">{$LANG_LOGO[use_graphic_logo]}</label>
 			<div class="uk-form-controls">
-				<input type="radio" name="usegraphic" value="1" {graphic_logo_selected} />
+				<input class="uk-radio" type="radio" name="usegraphic" value="1" {graphic_logo_selected} />
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="usegraphic">{$LANG_LOGO[use_text_logo]}</label>
 			<div class="uk-form-controls">
-				<input type="radio" id="usegraphic" name="usegraphic" value="0" {text_logo_selected} />
+				<input class="uk-radio" type="radio" id="usegraphic" name="usegraphic" value="0" {text_logo_selected} />
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="usegraphic">{$LANG_LOGO[use_no_logo]}</label>
 			<div class="uk-form-controls">
-				<input type="radio" id="usegraphic" name="usegraphic" value="-1" {no_logo_selected} />
+				<input class="uk-radio" type="radio" id="usegraphic" name="usegraphic" value="-1" {no_logo_selected} />
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="siteslogan">{$LANG_LOGO[display_site_slogan]}</label>
 			<div class="uk-form-controls">
-				<input type="checkbox" id="siteslogan" name="siteslogan" id="siteslogan" value="1" {slogan_selected} />
+				<input class="uk-checkbox" type="checkbox" id="siteslogan" name="siteslogan" id="siteslogan" value="1" {slogan_selected} />
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="siteslogan">{$LANG_LOGO[upload_logo]}</label>
 			<div class="uk-form-controls">
 				<input type="file" name="newlogo" id="newlogo" />
 				<div>{$LANG_LOGO['logo_help']}</div>
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG_LOGO[current_logo]}</label>
 			<div class="uk-form-controls">
 				{current_logo_graphic}

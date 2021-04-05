@@ -4,15 +4,15 @@
 </div>
 <form class="uk-form uk-form-horizontal" action="{site_admin_url}/trackback.php" method="post">
 	<input type="hidden" name="{gltoken_name}" value="{gltoken}">
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<label class="uk-form-label">
 			{lang_pingback_url}
 		</label>
 		<div class="uk-form-controls">
-			<input class="uk-form-width-large" type="text" maxlength="{max_url_length}" name="target" value="{target_url}">
+			<input class="uk-input" type="text" maxlength="{max_url_length}" name="target" value="{target_url}">
 		</div>
 	</div>
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<label class="uk-form-label">
 			{lang_site_url}
 		</label>
@@ -20,8 +20,8 @@
 			{site_url}
 		</div>
 	</div>
-	<div class="uk-form-row">
-		<button class="uk-button uk-button-primary" type="submit" value="{lang_send}" name="mode[2]">{lang_send}</button>
+	<div class="uk-margin">
+		<button class="uk-button-primary" type="submit" value="{lang_send}" name="mode[2]">{lang_send}</button>
 	</div>
 </form>
 {# end {templatelocation} #}

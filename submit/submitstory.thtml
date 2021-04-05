@@ -19,7 +19,7 @@
 		<li  {!if show_preview} class="uk-active" {!endif}><a href="#">{$LANG24[79]}</a></li>
 	</ul>
 
-	<div class="uk-form-row uk-margin-top">
+	<div class="uk-margin-top">
 		<div id="story_id" class="uk-card uk-card-body uk-margin">
 			<div class="uk-grid ">
 				<div class="uk-width-2-3@m">
@@ -58,7 +58,7 @@
 					<textarea id="bodytext" class="uk-form-width-large" name="bodytext" rows="24" style="width:100%;">{story_bodytext}</textarea>
 				</div>
 
-				<div class="uk-form-row uk-margin">
+				<div class="uk-margin">
 					<button type="button" class="uk-button-mini uk-button-primary" data-uk-toggle="{target:'#allowed_html'}">
 						Show Allowed Content
 					</button>

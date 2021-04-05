@@ -5,38 +5,38 @@
 		<div class="uk-panel uk-panel-box uk-panel-box-primary uk-margin-bottom">
 			{lang_explain}
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{lang_trackback_url}</label>
 			<div class="uk-form-controls">
-				<input class="uk-form-width-large" type="text" dir="ltr" size="50" maxlength="{max_url_length}" name="target" value="{target_url}">
+				<input class="uk-input" type="text" dir="ltr" size="50" maxlength="{max_url_length}" name="target" value="{target_url}">
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{lang_blog_name}</label>
 			<div class="uk-form-controls">
-				<input class="uk-form-width-large" type="text" size="50" maxlength="80" name="blog" value="{blog_name}">
+				<input class="uk-input" type="text" size="50" maxlength="80" name="blog" value="{blog_name}">
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{lang_entry_url}</label>
 			<div class="uk-form-controls">
-				<input class="uk-form-width-large" type="text" dir="ltr" size="50" maxlength="{max_url_length}" name="url" value="{url}">
+				<input class="uk-input" type="text" dir="ltr" size="50" maxlength="{max_url_length}" name="url" value="{url}">
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{lang_title}</label>
 			<div class="uk-form-controls">
-				<input class="uk-form-width-large" type="text" size="50" maxlength="255" name="title" value="{title}">
+				<input class="uk-input" type="text" size="50" maxlength="255" name="title" value="{title}">
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{lang_excerpt}</label>
 			<div class="uk-form-controls">
 				<textarea name="excerpt" class="uk-form-width-large" rows="8" cols="90">{excerpt}</textarea>
 				<p class="uk-text-small uk-text-muted">{lang_excerpt_truncated}</p>
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<div class="uk-form-controls">
 				<button class="uk-button uk-button-primary" type="submit" value="{lang_send}" name="mode[0]">{lang_send}</button>
 				<button class="uk-button" type="submit" value="{lang_preview}" name="mode[1]">{lang_preview}</button>

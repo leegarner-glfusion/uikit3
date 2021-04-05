@@ -31,41 +31,41 @@
 <form class="uk-form uk-form-horizontal uk-margin" id="autotag-editor" action="{site_admin_url}/autotag.php" method="post">
 	<input type="hidden" name="old_tag" value="{old_tag}">
 	<input type="hidden" name="{gltoken_name}" value="{gltoken}">
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<label class="uk-form-label" for="tag">{lang_tag}</label>
 		<div class="uk-form-controls">
-			<input class="required alphanumeric" maxlength="24" type="text" id="tag" name="tag" value="{tag}">
+			<input class="uk-input required alphanumeric" maxlength="24" type="text" id="tag" name="tag" value="{tag}">
 			<div class="uk-form-help-block uk-margin-small-left">
 				<span class="uk-text-muted uk-text-small">{$LANG_ADMIN[remaining_chars]}<span id="tag-count" class="uk-text-muted uk-text-small"></span></span>
 			</div>
 		</div>
 	</div>
 
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<label class="uk-form-label" for="description">{lang_desc}</label>
 		<div class="uk-form-controls">
-			<input class="uk-form-width-large required" type="text" maxlength="250" id="description" name="description" value="{description}">
+			<input class="uk-input required" type="text" maxlength="250" id="description" name="description" value="{description}">
 			<div class="uk-form-help-block uk-margin-small-left">
 				<span class="uk-text-muted uk-text-small">{$LANG_ADMIN[remaining_chars]}<span id="description-count" class="uk-text-muted uk-text-small"></span></span>
 			</div>
 		</div>
 	</div>
 
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<label class="uk-form-label" for="is_enabled">{lang_enabled}</label>
 		<div class="uk-form-controls">
-			<input type="checkbox" id="is_enabled" name="is_enabled" {is_enabled_checked}><span class="uk-form-help-inline">{enabled_msg}</span>
+			<input class="uk-checkbox" type="checkbox" id="is_enabled" name="is_enabled" {is_enabled_checked}><span class="uk-form-help-inline">{enabled_msg}</span>
 		</div>
 	</div>
 
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<label class="uk-form-label">{lang_function}</label>
 		<div class="uk-form-controls">
 			{is_function_checkbox}<span id="php-msg" class="uk-form-help-block">{php_msg}</span>
 		</div>
 	</div>
 
-	<div class="uk-form-row uk-margin-bottom">
+	<div class="uk-margin uk-margin-bottom">
 		<label class="uk-form-label" for="replacement">{lang_replacement}<br>{html_allowed}</label>
 		<div class="uk-form-controls">
 			<textarea class="uk-form-width-medium texteditor" rows="8" id="replacement" name="replacement">{replacement}</textarea>
@@ -73,15 +73,15 @@
 		</div>
 	</div>
 
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<div class="uk-grid">
 			<div class="uk-width-small-3-4">
-				<button class="uk-button uk-button-success" type="submit" value="{lang_save}" id="save" name="save">{lang_save}</button>
-				<button class="uk-button cancel" type="submit" value="{lang_cancel}" id="cancel" name="cancel">{lang_cancel}</button>
+				<button class="uk-button-success" type="submit" value="{lang_save}" id="save" name="save">{lang_save}</button>
+				<button class="uk-button-default cancel" type="submit" value="{lang_cancel}" id="cancel" name="cancel">{lang_cancel}</button>
 			</div>
 			<div class="uk-width-small-1-4 uk-text-right">
 {!if delete_option}
-				<button class="uk-button uk-button-danger" type="submit" value="{$LANG_AM[delete]}" id="delete" name="delete">{$LANG_AM[delete]}</button>
+				<button class="uk-button-danger" type="submit" value="{$LANG_AM[delete]}" id="delete" name="delete">{$LANG_AM[delete]}</button>
 {!endif}
 			</div>
 		</div>

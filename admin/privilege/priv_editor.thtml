@@ -6,34 +6,34 @@
     <input type="hidden" name="{gltoken_name}" value="{gltoken}">
 
     <fieldset class="uk-margin">
-        <div class="uk-form-row">
+        <div class="uk-margin">
             <label class="uk-form-label" for="ft_name">{lang_privname}</label>
             <div class="uk-form-controls">
 {!if is_core}
                 {priv_name}
 {!else}
-                <input type="text" class="required uk-form-width-large" maxlength="50" id="priv_name" name="ft_name" value="{priv_name}">
+                <input type="text" class="required uk-input" maxlength="50" id="priv_name" name="ft_name" value="{priv_name}">
 {!endif}
             </div>
         </div>
 
-        <div class="uk-form-row">
+        <div class="uk-margin">
             <label class="uk-form-label" for="priv_descr">{lang_description}</label>
             <div class="uk-form-controls">
-                <input type="text" class="uk-form-width-large required" maxlength="255" id="priv_descr" name="ft_descr" value="{priv_descr}">
+                <input type="text" class="uk-input required" maxlength="255" id="priv_descr" name="ft_descr" value="{priv_descr}">
                 <div class="uk-form-help-block uk-margin-small-left">
                     <span class="uk-text-muted uk-text-small">{$LANG_ADMIN[remaining_chars]}<span id="priv_descr-count" class="uk-text-muted uk-text-small"></span></span>
                 </div>
             </div>
         </div>
 
-        <div class="uk-form-row">
+        <div class="uk-margin">
             <div class="uk-grid uk-margin-top">
-                <div class="uk-width-small-3-4">
-                <button class="uk-button uk-button-success" type="submit" value="{lang_submit}" name="save">{lang_submit}</button>
-                <a class="uk-button" href="{site_admin_url}/privilege.php">{lang_cancel}</a>
+                <div class="uk-width-3-4@s">
+                <button class="uk-button-success" type="submit" value="{lang_submit}" name="save">{lang_submit}</button>
+                <a class="uk-button-default" href="{site_admin_url}/privilege.php">{lang_cancel}</a>
             </div>
-            <div class="uk-width-small-1-4 uk-text-right">
+            <div class="uk-width-1-4@s uk-text-right">
 {!if delete_option}
                 <button class="uk-button uk-button-danger" type="submit" name="priv_del" value="{$LANG_ADMIN[delete]}" onclick="return confirm('{$LANG_ACCESS[confirm1]}');">{$LANG_ADMIN[delete]}</button>
 {!endif}

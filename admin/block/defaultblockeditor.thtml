@@ -1,35 +1,34 @@
 {# begin {templatelocation} #}
-
 <div class="uk-panel uk-panel-box uk-margin">
 	<form class="uk-form uk-form-horizontal" id="block" action="{site_admin_url}/block.php" method="post">
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{lang_blocktitle}</label>
 			<div class="uk-form-controls">
-				<input class="required" type="text" name="title" value="{block_title}" size="48" maxlength="48" >
+				<input class="required uk-input" type="text" name="title" value="{block_title}" size="48" maxlength="48" >
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{lang_blockname}</label>
 			<div class="uk-form-controls">
 				{block_name}<input type="hidden" name="name" value="{block_name}">
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{lang_enabled}</label>
 			<div class="uk-form-controls">
-				<input type="checkbox" name="is_enabled" {is_enabled}>
+				<input class="uk-checkbox" type="checkbox" name="is_enabled" {is_enabled}>
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{lang_blockhelpurl}</label>
 			<div class="uk-form-controls">
-				<input type="text" dir="ltr" name="help" value="{block_help}" size="48" maxlength="{max_url_length}"> {lang_includehttp}<br>{lang_explanation}
+				<input class="uk-input" type="text" dir="ltr" name="help" value="{block_help}" size="48" maxlength="{max_url_length}"> {lang_includehttp}<br>{lang_explanation}
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{lang_topic}</label>
 			<div class="uk-form-controls">
-				<select name="tid">
+				<select class="uk-select" name="tid">
 					<option value="all" {all_selected}>{lang_all}</option>
 					<option value="homeonly" {homeonly_selected}>{lang_homeonly}</option>
 					<option value="allnhp" {nohomepage_selected}>{lang_nohomepage}</option>
@@ -37,23 +36,23 @@
 				</select>
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{lang_side}</label>
 			<div class="uk-form-controls">
-				<select name="onleft">
+				<select class="uk-select" name="onleft">
 					<option value="1" {left_selected}>{lang_left}</option>
 					<option value="0" {right_selected}>{lang_right}</option>
 				</select>
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{lang_blockorder}</label>
 			<div class="uk-form-controls">
-				<input type="text" size="4" name="blockorder" value="{block_order}"> 0 - 9999
+				<input class="uk-input" type="text" size="4" name="blockorder" value="{block_order}"> 0 - 9999
 			</select>
 		</div>
 	</div>
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<label class="uk-form-label">{lang_blocktype}</label>
 		<div class="uk-form-controls">
 			gldefault<input type="hidden" name="type" value="gldefault">
@@ -61,22 +60,22 @@
 	</div>
 </div>
 
-<fieldset class="uk-margin">
-	<legend>{lang_accessrights}</legend>
-	<div class="uk-form-row">
+<fieldset class="uk-fieldset uk-margin">
+	<legend class="uk-legend">{lang_accessrights}</legend>
+	<div class="uk-margin">
 		<label class="uk-form-label">{lang_owner}</label>
 		<div class="uk-form-controls">
 			{owner_name}<input type="hidden" name="owner_id" value="{owner_id}">
 		</select>
 	</div>
 </div>
-<div class="uk-form-row">
+<div class="uk-margin">
 	<label class="uk-form-label">{lang_group}</label>
 	<div class="uk-form-controls">
 		{group_dropdown}
 	</div>
 </div>
-<div class="uk-form-row">
+<div class="uk-margin">
 	<label class="uk-form-label">{lang_permissions}</label>
 	<div class="uk-form-controls">
 		{permissions_editor}

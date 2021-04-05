@@ -6,10 +6,10 @@
 <div class="uk-card uk-card-body">
 <form class="uk-form" action="{site_url}/profiles.php" method="post" id="contact">
 
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<label class="uk-form-label" for="author">{lang_username}</label>
 		<div class="uk-form-controls">
-			<input class="uk-form-width-large required" maxlength="128" type="text" id="author" name="author" value="{username}">
+			<input class="uk-input required" maxlength="128" type="text" id="author" name="author" value="{username}">
 			<div class="uk-form-help-block uk-margin-small-left">
 				<span class="uk-text-muted uk-text-small">
 					{$LANG_ADMIN[remaining_chars]}
@@ -19,10 +19,10 @@
 		</div>
 	</div>
 
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<label class="uk-form-label" for="authoremail">{lang_useremail}</label>
 		<div class="uk-form-controls">
-			<input class="required uk-form-width-large" type="text" id="authoremail" name="authoremail" value="{useremail}" maxlength="128">
+			<input class="required uk-input" type="text" id="authoremail" name="authoremail" value="{useremail}" maxlength="128">
 			<div class="uk-form-help-block uk-margin-small-left">
 				<span class="uk-text-muted uk-text-small">
 					{$LANG_ADMIN[remaining_chars]}
@@ -32,10 +32,10 @@
 		</div>
 	</div>
 
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<label class="uk-form-label" for="subject">{lang_subject}</label>
 		<div class="uk-form-controls">
-			<input class="required uk-width-1-1" type="text" id="subject" name="subject" value="{subject}" maxlength="78">
+			<input class="required uk-input" type="text" id="subject" name="subject" value="{subject}" maxlength="78">
 			<div class="uk-form-help-block uk-margin-small-left">
 				<span class="uk-text-muted uk-text-small">
 					{$LANG_ADMIN[remaining_chars]}
@@ -45,10 +45,10 @@
 		</div>
 	</div>
 
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<label class="uk-form-label" for="message">{lang_message}</label>
 		<div class="uk-form-controls">
-			<textarea id="message" name="message" rows="10" cols="80">{message}</textarea>
+			<textarea class="uk-textarea" id="message" name="message" rows="10" cols="80">{message}</textarea>
 		</div>
 	</div>
 

@@ -6,23 +6,22 @@
 <form class="uk-form uk-form-horizontal" action="{site_url}/users.php" method="post">
 	<input type="hidden" name="mode" value="getnewtoken" />
 	<input type="hidden" name="uid" value="{user_id}" />
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<label class="uk-form-label">{lang_username}</label>
 		<div class="uk-form-controls">
 			<input type="text" name="username" id="username" size="16">
 		</div>
 	</div>
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<label class="uk-form-label">{lang_password}</label>
 		<div class="uk-form-controls">
 			<input type="password" name="passwd" size="16">
 		</div>
 	</div>
-	<div class="uk-form-row">
+	<div class="uk-margin">
 		<div class="uk-form-controls">
 			<button class="uk-button-primary" type="submit" value="{lang_submit}">{lang_submit}</button>
 		</div>
 	</div>
 </form>
-
 {# end {templatelocation} #}

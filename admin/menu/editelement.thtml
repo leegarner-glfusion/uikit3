@@ -125,98 +125,98 @@ function toggleFields() {
 {!if mid}
   <input type="hidden" id="id" name="id" value="{mid}">
 {!endif}
-  <div class="uk-form-row">
+  <div class="uk-margin">
     <label class="uk-form-label" for="pid">{$LANG_MB01[parent]}</label>
     <div class="uk-form-controls">
       {parent_select}
     </div>
   </div>
-  <div class="uk-form-row">
+  <div class="uk-margin">
     <label class="uk-form-label" for="menulabel">{$LANG_MB01[elementlabel]}</label>
     <div class="uk-form-controls">
-      <input type="text" class="required uk-form-width-large" style="width:95%;" id="menulabel" name="menulabel" maxlength="254" value="{menulabel}">
+      <input type="text" class="uk-input required" style="width:95%;" id="menulabel" name="menulabel" maxlength="254" value="{menulabel}">
 			<div class="uk-form-help-block uk-margin-small-left">
 				<span class="uk-text-muted uk-text-small">{$LANG_ADMIN[remaining_chars]}<span id="menulabel-count" class="uk-text-muted uk-text-small"></span></span>
 			</div>
     </div>
   </div>
-  <div class="uk-form-row" id="displayafter">
+  <div class="uk-margin" id="displayafter">
     <label class="uk-form-label" for="menuorder">{$LANG_MB01[display_after]}</label>
     <div class="uk-form-controls">
       {order_select}
     </div>
   </div>
-  <div class="uk-form-row">
+  <div class="uk-margin">
     <label class="uk-form-label" for="menutype">{$LANG_MB01[type]}</label>
     <div class="uk-form-controls">
       {type_select}
     </div>
   </div>
-  <div class="uk-form-row" id="urldiv">
+  <div class="uk-margin" id="urldiv">
     <label class="uk-form-label" for="menuurl">{$LANG_MB01[url]}</label>
     <div class="uk-form-controls">
-      <input class="uk-form-width-large" style="width:95%;" type="text" id="menuurl" name="menuurl" value="{menuurl}">
+      <input class="uk-input" type="text" id="menuurl" name="menuurl" value="{menuurl}">
 			<div class="uk-form-help-block uk-margin-small-left">
 				<span class="uk-text-muted uk-text-small">{$LANG_ADMIN[remaining_chars]}<span id="menuurl-count" class="uk-text-muted uk-text-small"></span></span>
 			</div>
     </div>
   </div>
-  <div class="uk-form-row" id="targetdiv">
+  <div class="uk-margin" id="targetdiv">
     <label class="uk-form-label" for="urltarget">{$LANG_MB01[target]}</label>
     <div class="uk-form-controls">
       {target_select}
     </div>
   </div>
-  <div class="uk-form-row" id="phpdiv">
+  <div class="uk-margin" id="phpdiv">
     <label class="uk-form-label" for="phpfunction">{$LANG_MB01[php]}</label>
     <div class="uk-form-controls">
-      <input type="text" id="phpfunction" name="phpfunction" value="{phpfunction}">
+      <input class="uk-input" type="text" id="phpfunction" name="phpfunction" value="{phpfunction}">
     </div>
   </div>
-  <div class="uk-form-row" id="glcorediv">
+  <div class="uk-margin" id="glcorediv">
     <label class="uk-form-label" for="gltype">{$LANG_MB01[coretype]}</label>
     <div class="uk-form-controls">
       {gl_select}
     </div>
   </div>
-  <div class="uk-form-row" id="plugin">
+  <div class="uk-margin" id="plugin">
     <label class="uk-form-label" for="plugin">{$LANG_MB01[plugins]}</label>
     <div class="uk-form-controls">
       {plugin_select}
     </div>
   </div>
-  <div class="uk-form-row" id="staticpage">
+  <div class="uk-margin" id="staticpage">
     <label class="uk-form-label" for="spname">{$LANG_MB01[static_pages]}</label>
     <div class="uk-form-controls">
       {sp_select}
     </div>
   </div>
-  <div class="uk-form-row" id="topic">
+  <div class="uk-margin" id="topic">
     <label class="uk-form-label" for="topicname">{$LANG_MB01[topic]}</label>
     <div class="uk-form-controls">
       {topic_select}
     </div>
   </div>
-  <div class="uk-form-row" id="glfunc">
+  <div class="uk-margin" id="glfunc">
     <label class="uk-form-label" for="glfunc">{$LANG_MB01[glfusion_function]}</label>
     <div class="uk-form-controls">
       {glfunction_select}
     </div>
   </div>
-  <div class="uk-form-row">
+  <div class="uk-margin">
     <label class="uk-form-label" for="menuactive">{$LANG_MB01[active]}</label>
     <div class="uk-form-controls">
-      <input type="checkbox" id="menuactive" name="menuactive" value="1" {active_selected}>
+      <input class="uk-checkbox" type="checkbox" id="menuactive" name="menuactive" value="1" {active_selected}>
     </div>
   </div>
-  <div class="uk-form-row">
+  <div class="uk-margin">
     <label class="uk-form-label" for="group">{$LANG_MB01[permission]}</label>
     <div class="uk-form-controls">
       {group_select}
     </div>
   </div>
 
-  <div class="uk-form-row">
+  <div class="uk-margin">
   	<div class="uk-grid">
   		<div class="uk-width-small-3-4">
 			  <button class="uk-button uk-button-success" type="submit" id="execute" name="execute" value="{$LANG32[23]}">{$LANG32[23]}</button>

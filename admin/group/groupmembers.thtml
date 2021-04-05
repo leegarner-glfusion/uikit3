@@ -8,11 +8,11 @@
 		<input type="hidden" name="chk_showall" value="{show_all}">
 		<input type="hidden" name="{gltoken_name}" value="{gltoken}">
 		<fieldset data-uk-margins>
-			<div class="uk-form-row uk-margin-large-bottom">
+			<div class="uk-margin uk-margin-large-bottom">
 				<div class="uk-grid uk-container-center" data-uk-grid-match="{row: false}">
 					<div class="uk-width-2-5@m uk-text-center">
 						<h3>{LANG_sitemembers}</h3>
-						<select multiple="multiple" size="10" name="fieldFrom"
+						<select class="uk-select" multiple="multiple" size="10" name="fieldFrom"
 							style="width: 15em; height: 20em; padding: 2px;"
 							ondblclick="moveSelectedOptions(this.form['fieldFrom'],this.form['fieldTo'],false)">
 							{sitemembers}
@@ -27,7 +27,7 @@
 					</div>
 					<div class="uk-width-2-5@m uk-text-center">
 						<h3>{LANG_grpmembers}</h3>
-						<select multiple="multiple" size="10" name="fieldTo"
+						<select class="uk-select" multiple="multiple" size="10" name="fieldTo"
 							style="width: 15em; height: 20em; padding: 2px;"
 							ondblclick="moveSelectedOptions(this.form['fieldTo'],this.form['fieldFrom'],false)">
 							{group_list}
@@ -36,7 +36,7 @@
 				</div>
 			</div>
 		</fieldset>
-		<div class="uk-form-row uk-align-center uk-text-center">
+		<div class="uk-margin uk-align-center uk-text-center">
 			<button class="uk-button uk-button-success uk-form-width-small " type="submit" value="{lang_save}" name="save" onclick="return setUsers(this.form)">{lang_save}</button>
 			<button class="uk-button uk-button-danger uk-form-width-small" type="button" value="{lang_cancel}" name="cancel" onclick="javascript:history.go(-1)">{lang_cancel}</button>
 		</div>

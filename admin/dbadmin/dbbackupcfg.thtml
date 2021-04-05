@@ -10,16 +10,16 @@
 		<input type="hidden" name="saveconfig" value="x">
 		<input type="hidden" name="groupmembers">
 
-		<fieldset data-uk-margins>
-			<legend>{lang_tables_to_backup}</legend>
+		<fieldset class="uk-fieldset">
+			<legend class="uk-legend">{lang_tables_to_backup}</legend>
 
-			<div class="uk-form-row uk-margin-large-bottom">
+			<div class="uk-margin uk-margin-large-bottom">
 
 				<div class="uk-grid uk-container-center" data-uk-grid-match="{row: false}">
 
 					<div class="uk-width-2-5@m uk-text-center">
 						<h3>{lang_include}</h3>
-						<select multiple="multiple" size="10" name="fieldFrom"
+						<select class="uk-select" multiple="multiple" size="10" name="fieldFrom"
 							style="height: 20em; padding: 2px;"
 							ondblclick="moveSelectedOptions(this.form['fieldFrom'],this.form['fieldTo'],false)">
 							{included_tables}
@@ -38,7 +38,7 @@
 
 					<div class="uk-width-2-5@m uk-text-center">
 						<h3>{lang_exclude}</h3>
-						<select multiple="multiple" size="10" name="fieldTo"
+						<select class="uk-select" multiple="multiple" size="10" name="fieldTo"
 							style="width: 15em; height: 20em; padding: 2px;"
 							ondblclick="moveSelectedOptions(this.form['fieldTo'],this.form['fieldFrom'],false)">
 							{excluded_tables}
@@ -52,36 +52,36 @@
 		<fieldset data-uk-margins>
 			<legend>{lang_options}</legend>
 
-			<div class="uk-form-row">
+			<div class="uk-margin">
 				<div class="uk-form-label">
 					{lang_struct_only}
 				</div>
 				<div class="uk-form-controls">
-					<input type="checkbox" name="allstructs" {chk_allstructs}>
+					<input class="uk-checkbox" type="checkbox" name="allstructs" {chk_allstructs}>
 				</div>
 			</div>
 
-			<div class="uk-form-row">
+			<div class="uk-margin">
 				<div class="uk-form-label">
 					{lang_max_files}
 				</div>
 				<div class="uk-form-controls">
-					<input type="text" name="db_backup_maxfiles" value="{max_files}"> {lang_disable_purge}
+					<input class="uk-input" type="text" name="db_backup_maxfiles" value="{max_files}"> {lang_disable_purge}
 				</div>
 			</div>
 
-			<div class="uk-form-row">
+			<div class="uk-margin">
 				<div class="uk-form-label">
 					{lang_use_gzip}
 				</div>
 				<div class="uk-form-controls">
-					<input type="checkbox" name="use_gzip" {chk_gzip}>
+					<input class="uk-checkbox" type="checkbox" name="use_gzip" {chk_gzip}>
 				</div>
 			</div>
 
 		</fieldset>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<button class="uk-button uk-button-success uk-form-width-small uk-align-center" type="submit" value="{lang_save}" name="saveconfig" onclick="return setUsers(this.form)">{lang_save}</button>
 		</div>
 	</form>

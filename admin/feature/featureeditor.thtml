@@ -6,21 +6,21 @@
     <input type="hidden" name="{gltoken_name}" value="{gltoken}">
 
     <fieldset class="uk-margin">
-        <div class="uk-form-row">
+        <div class="uk-margin">
             <label class="uk-form-label" for="f_ft_name">{lang_ft_name}</label>
             <div class="uk-form-controls">
                 {ft_name}
             </div>
         </div>
 
-        <div class="uk-form-row">
+        <div class="uk-margin">
             <label class="uk-form-label" for="ft_descr">{lang_ft_descr}</label>
             <div class="uk-form-controls">
-                <input type="text" class="uk-form-width-large required" maxlength="255" id="f_ft_descr" name="ft_descr" value="{ft_descr}">
+                <input type="text" class="uk-input required" maxlength="255" id="f_ft_descr" name="ft_descr" value="{ft_descr}">
             </div>
         </div>
 
-        <div class="uk-form-row {hide_adminoption}">
+        <div class="uk-margin {hide_adminoption}">
             <label class="uk-form-label" for="chk_grps">{lang_grp_members}</label>
             <div class="uk-form-controls">
                 <table class="uk-table uk-table-hover uk-table-striped uk-table-contensed uk-width-1-1">
@@ -28,7 +28,7 @@
                 <tr><th>Include</th><th>Group Name</th><th>Description</th></tr>
 <!-- BEGIN grpItems -->
                 <tr>
-                <td><input type="checkbox" name="grp_id[{grp_id}]" value="1" {chk} /></td>
+                <td><input class="uk-checkbox" type="checkbox" name="grp_id[{grp_id}]" value="1" {chk} /></td>
                 <td>{grp_name}</td>
                 <td>{grp_descr}</td>
                 </tr>
@@ -38,11 +38,11 @@
             </div>
         </div>
 
-    <div class="uk-form-row">
+    <div class="uk-margin">
         <div class="uk-grid uk-margin-top">
-            <div class="uk-width-small-3-4">
-            <button class="uk-button uk-button-success" type="submit" value="{lang_save}" name="save">{lang_save}</button>
-            <button class="uk-button" type="submit" value="{lang_cancel}" name="cancel">{lang_cancel}</button>
+            <div class="uk-width-3-4@s">
+            <button class="uk-button-success" type="submit" value="{lang_save}" name="save">{lang_save}</button>
+            <button class="uk-button-default" type="submit" value="{lang_cancel}" name="cancel">{lang_cancel}</button>
         </div>
     </div>
 </form>

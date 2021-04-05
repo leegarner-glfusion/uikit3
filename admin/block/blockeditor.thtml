@@ -8,21 +8,21 @@
 	<input type="hidden" name="bid" value="{block_bid}" />
 	<input type="hidden" name="{gltoken_name}" value="{gltoken}" />
 <div class="uk-panel uk-panel-box uk-margin-bottom">
-	<fieldset>
-		<div class="uk-form-row">
+	<fieldset class="uk-fieldset">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="title">{lang_blocktitle}</label>
 			<div class="uk-form-controls">
-				<input class="uk-form-width-large" type="text" maxlength="255" id="title" name="title" value="{block_title}">
+				<input class="uk-input" type="text" maxlength="255" id="title" name="title" value="{block_title}">
 				<div class="uk-form-help-block uk-margin-small-left">
 					<span class="uk-text-muted uk-text-small">{$LANG_ADMIN[remaining_chars]}<span id="title-count" class="uk-text-muted uk-text-small"></span></span>
 				</div>
 			</div>
 		</div>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="name">{lang_blockname}</label>
 			<div class="uk-form-controls">
-				<input class="required alphanumeric uk-form-width-medium" type="text" maxlength="48" id="name" name="name" value="{block_name}">
+				<input class="required alphanumeric uk-input" type="text" maxlength="48" id="name" name="name" value="{block_name}">
 				<span class="uk-form-help-inline">{lang_nospaces}</span>
 				<div class="uk-form-help-block uk-margin-small-left">
 					<span class="uk-text-muted uk-text-small">{$LANG_ADMIN[remaining_chars]}<span id="name-count" class="uk-text-muted uk-text-small"></span></span>
@@ -30,17 +30,17 @@
 			</div>
 		</div>
 
-		<div class="uk-form-row slider_checkbox">
+		<div class="uk-margin slider_checkbox">
 			<label class="uk-form-label" for="is_enabled">{lang_enabled}</label>
 			<div class="uk-form-controls">
 				<input type="checkbox" name="is_enabled" {is_enabled}>
 			</div>
 		</div>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="help">{lang_blockhelpurl}</label>
 			<div class="uk-form-controls">
-				<input class="uk-form-width-large" type="text" maxlength="255" id="help" name="help" value="{block_help}" maxlength="{max_url_length}">
+				<input class="uk-input" type="text" maxlength="255" id="help" name="help" value="{block_help}" maxlength="{max_url_length}">
 				<div class="uk-text-small">{lang_includehttp}&nbsp;{lang_explanation}</div>
 				<div class="uk-form-help-block uk-margin-small-left">
 					<span class="uk-text-muted uk-text-small">{$LANG_ADMIN[remaining_chars]}<span id="help-count" class="uk-text-muted uk-text-small"></span></span>
@@ -48,10 +48,10 @@
 			</div>
 		</div>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="tid">{lang_topic}</label>
 			<div class="uk-form-controls">
-				<select id="tid" name="tid" class="uk-form-width-medium">
+				<select class="uk-select" id="tid" name="tid" class="uk-form-width-medium">
 					<option value="all" {all_selected}>{lang_all}</option>
 					<option value="homeonly" {homeonly_selected}>{lang_homeonly}</option>
 					<option value="allnhp" {nohomepage_selected}>{lang_nohomepage}</option>
@@ -60,28 +60,28 @@
 			</div>
 		</div>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="onleft">{lang_side}</label>
 			<div class="uk-form-controls">
-				<select id="onleft" name="onleft" class="uk-form-width-medium">
+				<select class="uk-select" id="onleft" name="onleft" class="uk-form-width-medium">
 					<option value="1" {left_selected}>{lang_left}</option>
 					<option value="0" {right_selected}>{lang_right}</option>
 				</select>
 			</div>
 		</div>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="blockorder">{lang_blockorder}</label>
 			<div class="uk-form-controls">
-				<input class="uk-form-width-medium" type="text" maxlength="5" id="blockorder" name="blockorder" value="{block_order}">
+				<input class="uk-input" type="text" maxlength="5" id="blockorder" name="blockorder" value="{block_order}">
 				<span class="uk-form-help-inline">0 - 9999</span>
 			</div>
 		</div>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="type">{lang_blocktype}</label>
 			<div class="uk-form-controls">
-				<select name="type" id="type" class="uk-form-width-medium">
+				<select name="type" id="type" class="uk-select">
 					<option value="normal" {normal_selected}>{lang_normalblock}</option>
 					<option value="phpblock" {php_selected}>{lang_phpblock}</option>
 					<option value="portal" {portal_selected}>{lang_portalblock}</option>
@@ -89,13 +89,13 @@
 			</div>
 		</div>
 	</fieldset>
-	<fieldset id="fs-phpblock-options" class="uk-margin-top">
-		<legend>{lang_phpblockoptions}</legend>
+	<fieldset id="fs-phpblock-options" class="uk-fieldset uk-margin-top">
+		<legend class="uk-legend">{lang_phpblockoptions}</legend>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="phpblockfn">{lang_blockfunction}</label>
 			<div class="uk-form-controls">
-				<input class="uk-form-width-large" type="text" maxlength="128" name="phpblockfn" id="phpblockfn" value="{block_phpblockfn}">
+				<input class="uk-input" type="text" maxlength="128" name="phpblockfn" id="phpblockfn" value="{block_phpblockfn}">
 				<div class="uk-form-help-block uk-margin-small-left">
 					<span class="uk-text-muted uk-text-small">{$LANG_ADMIN[remaining_chars]}<span id="phpblockfn-count" class="uk-text-muted uk-text-small"></span></span>
 				</div>
@@ -107,41 +107,41 @@
 
 	<fieldset id="fs-portal-options"" class="uk-margin-top"><legend>{lang_portalblockoptions}</legend>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="rdfurl">{lang_rdfurl}</label>
 			<div class="uk-form-controls">
-				<input class="uk-form-width-large" type="text" maxlength="255" id="rdfurl" name="rdfurl" value="{block_rdfurl}">
+				<input class="uk-input" type="text" maxlength="255" id="rdfurl" name="rdfurl" value="{block_rdfurl}">
 				<div class="uk-form-help-block uk-margin-small-left">
 					<span class="uk-text-muted uk-text-small">{$LANG_ADMIN[remaining_chars]}<span id="rdfurl-count" class="uk-text-muted uk-text-small"></span></span>
 				</div>
 			</div>
 		</div>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="rdflimit">{lang_rdflimit}</label>
 			<div class="uk-form-controls">
-				<input type="text" maxlength="3" id="rdflimit" name="rdflimit" value="{block_rdflimit}">
+				<input class="uk-input" type="text" maxlength="3" id="rdflimit" name="rdflimit" value="{block_rdflimit}">
 			</div>
 		</div>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="rdfupdated">{lang_lastrdfupdate}</label>
 			<div class="uk-form-controls">
-				<input type="text" id="rdfupdated" name="rdfupdated" value="{block_rdfupdated}">
+				<input class="uk-input" type="text" id="rdfupdated" name="rdfupdated" value="{block_rdfupdated}">
 			</div>
 		</div>
 	</fieldset>
 
-	<fieldset id="fs-normal-options" class="uk-margin-top">
-		<legend>{lang_normalblockoptions}</legend>
+	<fieldset id="fs-normal-options" class="uk-fieldset uk-margin-top">
+		<legend class="uk-legend">{lang_normalblockoptions}</legend>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="content">{lang_blockcontent}</label>
 		<div id="texteditor">
 {!if wysiwyg}
 			<div class="uk-margin-small">
-				<button id="visual" type="button" class="uk-button" value="{visual_editor}" onclick="won('content');$('#std').attr('class','uk-button');$('#visual').attr('class','uk-button uk-button-success')">{visual_editor}</button>
-				<button id="std" type="button" class="uk-button uk-button-success" value="{html_editor}"  onclick="woff('content');$('#visual').attr('class','uk-button');$('#std').attr('class','uk-button uk-button-success')">{html_editor}</button>
+				<button id="visual" type="button" class="uk-button-default" value="{visual_editor}" onclick="won('content');$('#std').attr('class','uk-button-default');$('#visual').attr('class','uk-button-success')">{visual_editor}</button>
+				<button id="std" type="button" class="uk-button-success" value="{html_editor}"  onclick="woff('content');$('#visual').attr('class','uk-button-default');$('#std').attr('class','uk-button-success')">{html_editor}</button>
 			</div>
 {!endif}
 			<textarea class="texteditor" name="content" id="content" cols="45" rows="12">{block_content}</textarea>
@@ -149,7 +149,7 @@
 			<span class="warningsmall">{lang_allowed_html}</span>
 		</div>
 </div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="allow_autotags">{lang_autotags}</label>
 			<div class="uk-form-controls">
 				<input type="checkbox" id="allow_autotags" name="allow_autotags" {allow_autotags}> ({lang_use_autotags})
@@ -157,24 +157,24 @@
 		</div>
 	</fieldset>
 
-	<fieldset class="uk-margin-top">
-		<legend>{lang_accessrights}</legend>
+	<fieldset class="uk-fieldset uk-margin-top">
+		<legend class="uk-legend">{lang_accessrights}</legend>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="owner_id">{lang_owner}</label>
 			<div class="uk-form-controls">
 				{owner_name} <input type="hidden" name="owner_id" value="{owner_id}">
 			</div>
 		</div>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label" for="group_id">{lang_group}</label>
 			<div class="uk-form-controls">
 				{group_dropdown}
 			</div>
 		</div>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{lang_permissions}</label>
 			<div class="uk-form-controls">
 				{lang_perm_key}

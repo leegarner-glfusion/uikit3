@@ -18,10 +18,10 @@
  	{lang_enroll_enter_code}
 </p>
 
-<div class="uk-form-row">
-	<label >{lang_auth_code}</label>
+<div class="uk-margin">
+	<label>{lang_auth_code}</label>
 	<input type="text" id="twofactorverify" name="twofactorverify" autofocus>&nbsp;
-	<button id="tfa-verify" class="uk-button uk-button-success">{lang_verify}</button>
+	<button id="tfa-verify" class="uk-button-success">{lang_verify}</button>
 	<input type="hidden" id="tfasecret" name="tfasecret" value="{tfa-secret}">
 	<input type="hidden" id="{token_name}" name="{token_name}" value="{token_value}">
 </div>
@@ -29,6 +29,10 @@
 	var clipboard = new Clipboard('.cpybtn');
 	clipboard.on('success', function(e) {
 		e.clearSelection();
-		UIkit.notify('{lang_copy_success}',{timeout: 300});
-	});
+		UIkit.notification({
+            message: '<span uk-icon="icon: check"></span> {lang_copy_success}',
+            timeout: 300,
+			status: 'success',
+		});
+	}
 </script>

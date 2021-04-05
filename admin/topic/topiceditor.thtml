@@ -3,50 +3,50 @@
 	<form class="uk-form uk-form-horizontal" id="topiceditor" action="{site_admin_url}/topic.php" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="{gltoken_name}" value="{gltoken}" />
 		<input type="hidden" name="old_tid" value="{old_tid}" />
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG27[3]}</label>
 			<div class="uk-form-controls">
-				<input class="required" type="text" size="48" name="topic_name" id="topic" value="{topic}">
+				<input class="uk-input required" type="text" size="48" name="topic_name" id="topic" value="{topic}">
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG27[2]}</label>
 			<div class="uk-form-controls">
-				<input class="required alphanumeric" type="text" size="20" maxlength="128" name="tid" id="tid" value="{tid}">
+				<input class="uk-input required alphanumeric" type="text" size="20" maxlength="128" name="tid" id="tid" value="{tid}">
 				&nbsp;&nbsp;{$LANG27[5]}
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG27[59]}</label>
 			<div class="uk-form-controls">
-				<textarea class="uk-form-width-large" id="description" name="description">{description}</textarea>
+				<textarea class="uk-input" id="description" name="description">{description}</textarea>
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG27[4]}</label>
 			<div class="uk-form-controls">
-				<input type="text" dir="ltr" maxlength="255" name="imageurl" value="{imageurl}" />
+				<input class="uk-input" type="text" dir="ltr" maxlength="255" name="imageurl" value="{imageurl}" />
 			</div>
 		</div>
 
 {!if topicimage}
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<div class="uk-form-controls">
 				<img class="uk-thumbnail" src="{topicimage}" alt="" height="48" width="48">
 			</div>
 		</div>
 {!endif}
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG27[27]}</label>
 			<div class="uk-form-controls">
 				<input type="file" name="newicon"> ({$LANG27[28]} {icon_max_width} x {icon_max_height})
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG27[41]}</label>
 			<div class="uk-form-controls">
-				<select id="sortnum" name="sortnum">
+				<select class="uk-select" id="sortnum" name="sortnum">
 					<option value="0">{$LANG27[58]}</option>
 					<!-- BEGIN sort_selection -->
 					<option value="{sortnum}" {sortnum_sel}>{sortnum_tid}</option>
@@ -54,49 +54,49 @@
 				</select>
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG27[11]}</label>
 			<div class="uk-form-controls">
-				<input type="text" size="3" maxlength="3" name="limitnews" value="{limitnews}" /> ({$LANG27[16]} {default_limit})
+				<input class="uk-input" type="text" size="3" maxlength="3" name="limitnews" value="{limitnews}" /> ({$LANG27[16]} {default_limit})
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG27[35]}</label>
 			<div class="uk-form-controls">
-				<select id="sort_by" name="sort_by">
+				<select class="uk-select" id="sort_by" name="sort_by">
 					<option value="0" {sort_by_0}>{$LANG27[30]}</option>
 					<option value="1" {sort_by_1}>{$LANG27[31]}</option>
 					<option value="2" {sort_by_2}>{$LANG27[32]}</option>
 				</select>
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG27[36]}</label>
 			<div class="uk-form-controls">
-				<select name="sort_dir" id="sort_dir">
+				<select class="uk-select" name="sort_dir" id="sort_dir">
 					<option value="ASC" {sort_dir_ASC}>{$LANG27[33]}</option>
 					<option value="DESC" {sort_dir_DESC}>{$LANG27[34]}</option>
 				</select>
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG27[22]}</label>
 			<div class="uk-form-controls">
-				<input type="checkbox" name="is_default" value="1" {default_chk}> ({$LANG27[22]})
+				<input class="uk-checkbox" type="checkbox" name="is_default" value="1" {default_chk}> ({$LANG27[22]})
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG27[25]}</label>
 			<div class="uk-form-controls">
-				<input type="checkbox" name="archive_flag" value="1" {archive_chk} {archive_disabled} /> ({$LANG27[26]})
+				<input class="uk-checkbox" type="checkbox" name="archive_flag" value="1" {archive_chk} {archive_disabled} /> ({$LANG27[26]})
 			</div>
 		</div>
 
 {!if lang_assoc_objects}
-		<fieldset style="margin-top:15px;">
-			<legend>{lang_assoc_objects}</legend>
+		<fieldset class="uk-fieldset uk-margin-top">
+			<legend class="uk-legend">{lang_assoc_objects}</legend>
   {!if assoc_stories_published}
-			<div class="uk-form-row">
+			<div class="uk-margin">
 				<label class="uk-form-label">{$LANG27[44]}</label>
 				<div class="uk-form-controls">
 					{assoc_stories_published}&nbsp;&nbsp;&nbsp;[{published_story_admin_link}]
@@ -104,7 +104,7 @@
 			</div>
   {!endif}
   {!if assoc_stories_draft}
-			<div class="uk-form-row">
+			<div class="uk-margin">
 				<label class="uk-form-label">{$LANG27[45]}</label>
 				<div class="uk-form-controls">
 					{assoc_stories_draft}&nbsp;&nbsp;&nbsp;[{draft_story_admin_link}]
@@ -112,7 +112,7 @@
 			</div>
   {!endif}
   {!if assoc_stories_submitted}
-			<div class="uk-form-row">
+			<div class="uk-margin">
 				<label class="uk-form-label">{$LANG27[46]}</label>
 				<div class="uk-form-controls">
 					{assoc_stories_submitted}&nbsp;&nbsp;&nbsp;[{moderation_link}]
@@ -120,7 +120,7 @@
 			</div>
   {!endif}
   {!if assoc_images}
-			<div class="uk-form-row">
+			<div class="uk-margin">
 				<label class="uk-form-label">{$LANG27[47]}</label>
 				<div class="uk-form-controls">
 					{assoc_images}
@@ -128,7 +128,7 @@
 			</div>
   {!endif}
   {!if assoc_comments}
-			<div class="uk-form-row">
+			<div class="uk-margin">
 				<label class="uk-form-label">{$LANG27[48]}</label>
 				<div class="uk-form-controls">
 					{assoc_comments}
@@ -136,7 +136,7 @@
 			</div>
   {!endif}
   {!if assoc_trackbacks}
-			<div class="uk-form-row">
+			<div class="uk-margin">
 				<label class="uk-form-label">{$LANG27[49]}</label>
 				<div class="uk-form-controls">
 					{assoc_trackbacks}
@@ -144,7 +144,7 @@
 			</div>
   {!endif}
   {!if lang_assoc_blocks}
-			<div class="uk-form-row">
+			<div class="uk-margin">
 				<label class="uk-form-label">{$LANG27[50]}</label>
 				<div class="uk-form-controls">
 					{assoc_blocks}
@@ -152,7 +152,7 @@
 			</div>
   {!endif}
   {!if lang_assoc_feeds}
-			<div class="uk-form-row">
+			<div class="uk-margin">
 				<label class="uk-form-label">{$LANG27[51]}</label>
 				<div class="uk-form-controls">
 					{assoc_feeds}&nbsp;&nbsp;&nbsp;[{syndication_admin_link}]
@@ -162,21 +162,21 @@
 		</fieldset>
 {!endif}
 
-		<fieldset style="margin-top:15px;">
-			<legend>{$LANG_ACCESS['accessrights']}</legend>
-			<div class="uk-form-row">
+		<fieldset class="uk-fieldset uk-margin-top">
+			<legend class="uk-legend">{$LANG_ACCESS['accessrights']}</legend>
+			<div class="uk-margin">
 				<label class="uk-form-label">{$LANG_ACCESS['owner']}</label>
 				<div class="uk-form-controls">
 					{owner_dropdown}
 				</div>
 			</div>
-			<div class="uk-form-row">
+			<div class="uk-margin">
 				<label class="uk-form-label">{$LANG_ACCESS['group']}</label>
 				<div class="uk-form-controls">
 					{group_dropdown}
 				</div>
 			</div>
-			<div class="uk-form-row">
+			<div class="uk-margin">
 				<label class="uk-form-label">{$LANG_ACCESS['permissions']}</label>
 				<div class="uk-form-controls">
 					{permissions_editor}
@@ -184,7 +184,7 @@
 			</div>
 		</fieldset>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<div class="uk-grid">
 				<div class="uk-width-small-3-4">
 					<button class="uk-button uk-button-success" type="submit" name="save">{$LANG_ADMIN['save']}</button>

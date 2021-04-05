@@ -16,20 +16,20 @@
 		<tr>
 			<td>{service_display_name}</td>
 			<td>{service_url}</td>
-			<td><input name="{service}_username" id="{service}_username" value="{service_username}" class="uk-form-width-medium"></td>
+			<td><input name="{service}_username" id="{service}_username" value="{service_username}" class="uk-input"></td>
 		</tr>
 		<!-- END social_links -->
 
 	</table>
 
-	<div class="uk-form-row uk-margin-bottom">
+	<div class="uk-margin">
 		<label class="uk-form-label">{lang_additional_html}</label>
 		<div class="uk-form-controls">
-			<textarea class="uk-form-large uk-form-width-large texteditor" rows="10" name="extra">{extra}</textarea>
+			<textarea class="uk-textarea texteditor" rows="10" name="extra">{extra}</textarea>
 		</div>
 	</div>
 
-	<button class="uk-button uk-button-primary" type="submit" value="save" name="savesitememberships">{lang_save}</button>
-	<button class="uk-button cancel" type="submit" value="{lang_cancel}" name="cancel">{lang_cancel}</button>
+	<button class="uk-button-primary" type="submit" value="save" name="savesitememberships">{lang_save}</button>
+	<button class="uk-button-default cancel" type="submit" value="{lang_cancel}" name="cancel">{lang_cancel}</button>
 </form>
 {# end {templatelocation} #}

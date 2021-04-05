@@ -9,31 +9,31 @@
 		<input type="hidden" name="temp_dir" value="{temp_dir}">
 		<input type="hidden" name="action" value="installautotag">
 
-		<div class="uk-form-row uk-panel uk-panel-box uk-panel-box-primary">
+		<div class="uk-margin uk-panel uk-panel-box uk-panel-box-primary">
 			{pi_name} {$LANG32[62]}
 		</div>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG32[26]}</label>
 			<div class="uk-form-controls">
 				{pi_name}
 			</div>
 		</div>
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG32[33]}</label>
 			<div class="uk-form-controls">
 				{pi_version}
 			</div>
 		</div>
 
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG32[29]}</label>
 			<div class="uk-form-controls">
 				{pi_gl_version}
 			</div>
 		</div>
 {!if upgrade}
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG32[28]}</label>
 			<div class="uk-form-controls">
 				{plugin_old_version}
@@ -41,14 +41,14 @@
 		</div>
 {!endif}
 {!if pi_desc}
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG32[63]}</label>
 			<div class="uk-form-controls">
 				{pi_desc}
 			</div>
 		</div>
 {!endif}
-		<div class="uk-form-row">
+		<div class="uk-margin">
 			<label class="uk-form-label">{$LANG32[27]}</label>
 			<div class="uk-form-controls">
 				{pi_url}
@@ -57,11 +57,11 @@
 
 		<div class="uk-margin">
 {!if upgrade}
-			<button class="uk-button uk-button-primary" type="submit" name="submit" value="{$LANG32[61]}">{$LANG32[61]}</button>
+			<button class="uk-button-primary" type="submit" name="submit" value="{$LANG32[61]}">{$LANG32[61]}</button>
 {!else}
-			<button class="uk-button uk-button-primary" type="submit" name="submit" value="{$LANG32[60]}">{$LANG32[60]}</button>
+			<button class="uk-button-primary" type="submit" name="submit" value="{$LANG32[60]}">{$LANG32[60]}</button>
 {!endif}
-			<button class="uk-button" type="submit" name="cancel" value="{$LANG32[59]}">{$LANG32[59]}</button>
+			<button class="uk-button-default" type="submit" name="cancel" value="{$LANG32[59]}">{$LANG32[59]}</button>
 		</div>
 	</form>
 </div>

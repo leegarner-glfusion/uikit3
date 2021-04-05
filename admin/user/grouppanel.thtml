@@ -3,7 +3,7 @@
   <fieldset class="uk-fieldset">
     <legend class="uk-legend">{lang_securitygroups}</legend>
     {lang_groupinstructions}
-    <div class="uk-form-row">
+    <div class="uk-margin">
         {group_options}
     </div>
   </fieldset>

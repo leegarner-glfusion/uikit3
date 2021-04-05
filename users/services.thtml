@@ -1,5 +1,5 @@
 {# begin {templatelocation} #}
-<div class="uk-form-row">
+<div class="uk-margin">
 	<label class="uk-form-label">{lang_service}</label>
 	<div class="uk-form-controls">
 		{select_service}

@@ -9,7 +9,7 @@
 
   <br />
 
-  <div class="uk-form-row">
+  <div class="uk-margin">
     <label class="uk-form-label" for="to_group">{lang_to}</label>
     <div class="uk-form-controls">
 {!if send_to_group}
@@ -24,61 +24,61 @@
     </div>
   </div>
 
-  <div class="uk-form-row">
+  <div class="uk-margin">
     <label class="uk-form-label" for="fra">{lang_from}</label>
     <div class="uk-form-controls">
-      <input type="text" class="required uk-form-width-medium" maxlength="50" id="fra" name="fra" value="{site_name}">
+      <input type="text" class="required uk-input" maxlength="50" id="fra" name="fra" value="{site_name}">
     </div>
   </div>
 
-  <div class="uk-form-row">
+  <div class="uk-margin">
     <label class="uk-form-label" for="fraepost">{lang_replyto}</label>
     <div class="uk-form-controls">
-      <input type="text" class="required uk-form-width-medium" maxlength="50" id="fraepost" name="fraepost" value="{site_mail}">
+      <input type="text" class="required uk-input" maxlength="50" id="fraepost" name="fraepost" value="{site_mail}">
     </div>
   </div>
 
-  <div class="uk-form-row">
+  <div class="uk-margin">
     <label class="uk-form-label" for="subject">{lang_subject}</label>
     <div class="uk-form-controls">
-      <input type="text" class="required uk-form-width-large" id="subject" name="subject" value="{subject}">
+      <input type="text" class="required uk-input" id="subject" name="subject" value="{subject}">
     </div>
   </div>
 
 {!if send_to_group}
-  <div class="uk-form-row">
+  <div class="uk-margin">
     <label class="uk-form-label" for="overstyr">{lang_options}</label>
     <div class="uk-form-controls">
-      <input class="uk-margin" type="checkbox" id="overstyr" name="overstyr">&nbsp;<span class="uk-text uk-margin-small">{lang_ignoreusersettings}</span>
+      <input class="uk-checkbox uk-margin" type="checkbox" id="overstyr" name="overstyr">&nbsp;<span class="uk-text uk-margin-small">{lang_ignoreusersettings}</span>
       <br/>
-      <input class="uk-margin" type="checkbox" id="priority" name="priority">&nbsp;<span class="uk-text uk-margin-small">{lang_urgent}</span>
+      <input class="uk-checkbox uk-margin" type="checkbox" id="priority" name="priority">&nbsp;<span class="uk-text uk-margin-small">{lang_urgent}</span>
     </div>
   </div>
 {!else}
 {!if warning}
-  <div class="uk-form-row">
+  <div class="uk-margin">
     <label class="uk-form-label">{lang_warning}</label>
     <div class="uk-form-controls">
       <span class="uk-text-warning">{warning}</span>
     </div>
   </div>
 {!endif}
-  <div class="uk-form-row">
+  <div class="uk-margin">
     <label class="uk-form-label">{lang_options}</label>
     <div class="uk-form-controls">
-      {!if warning}<input type="checkbox" name="overstyr"><span class="uk-text">{lang_ignoreusersettings}</span><br/>{!endif}
-      <input type="checkbox" name="priority" /><span class="uk-text">{lang_urgent}</span>
+      {!if warning}<input class="uk-checkbox" type="checkbox" name="overstyr"><span class="uk-text">{lang_ignoreusersettings}</span><br/>{!endif}
+      <input class="uk-checkbox" type="checkbox" name="priority" /><span class="uk-text">{lang_urgent}</span>
     </div>
   </div>
 {!endif}
-  <div class="uk-form-row">
+  <div class="uk-margin">
     <label class="uk-form-label">{lang_body}</label>
     <div class="uk-form-controls">
       <textarea class="texteditor" id="message" name="message" rows="10" cols="80">{message_text}</textarea>
     </div>
   </div>
 
-  <div class="uk-form-row">
+  <div class="uk-margin">
     <div class="uk-form-controls">
       <input type="hidden" name="postmode" value="{postmode}" />
       <button class="uk-button uk-button-primary" type="submit" value="{lang_send}">{lang_send}</button>
