@@ -10,36 +10,35 @@
         <input type="hidden" name="{sec_token_name}" value="{sec_token}">
     </form>
 
-<nav class="uk-navbar uk-margin-bottom uk-visible@s">
-    <a href="#" class="uk-navbar-toggle" uk-toggle="{target:'#admin-side-config'}">
-    </a>
-    <div class="uk-navbar-content">{group_name} / {subgroup_active_name}</div>
-    <div class="uk-navbar-content uk-navbar-flip">
-        <input type="text" name="navconfigitem" id="navautocomplete">
-    </div>
-</nav>
-<div id="admin-side-config" class="uk-offcanvas uk-visible-small">
-    <div class="uk-offcanvas-bar">
-        <div class="uk-card">
-            {config_menu}
-        </div>
-    </div>
-</div>
+	<nav class="uk-navbar uk-margin-bottom uk-hidden@m">
+		<a href="#" class="uk-navbar-toggle" uk-toggle="{target:'#admin-side-config'}"></a>
+	    <div class="uk-navbar-item">{group_name} / {subgroup_active_name} /&nbsp;</div>
+		<div class="uk-navbar-item uk-navbar-right">
+			<input type="text" name="navconfigitem" id="navautocomplete">
+	    </div>
+	</nav>
+	<div id="admin-side-config" class="uk-hidden@m" uk-offcanvas>
+		<div class="uk-offcanvas-bar">
+			<div class="uk-card">
+				{config_menu}
+	        </div>
+		</div>
+	</div>
 
-    <div class="uk-grid uk-margin-large-bottom">
+    <div uk-grid class="uk-margin-large-bottom">
         <div class="uk-width-1-4@m uk-visible@m">
 
             <div class="uk-card uk-card-default uk-margin-remove-bottom">
-                <div class="uk-panel-title">{lang_search}</div>
+                <div class="uk-card-title">{lang_search}</div>
                 <input type="text" name="configitem" id="autocomplete"/>
             </div>
 
-            <div class="uk-panel uk-card-default uk-margin-small">{config_menu}</div>
+            <div class="uk-card uk-card-default uk-margin-small">{config_menu}</div>
         </div>
         <div class="uk-width-3-4@m uk-width-1-1@s">
 {!if change_block}
-            <div class="uk-alert" data-uk-alert>
-                <a href="#" class="uk-alert-close uk-close"></a>
+            <div class="uk-alert uk-alert-success">
+                <a href="#" class="uk-alert-close" uk-close></a>
                 {lang_changes_made}:
                 {change_block}
             </div>
@@ -47,8 +46,8 @@
             <form id="formsubgroup" class="uk-form-horizontal" action="{site_admin_url}/configuration.php" method="post" name="subgroup">
                 <input type="hidden" id="conf_group" name="conf_group" value="{open_group}">
                 <input type="hidden" id="sub_group" name="sub_group" value="{open_sg}">
-              <input type="hidden" id="activetab" value="" id="activetab" name="activetab">
-              <input type="hidden" id="fieldname" value="" name="fieldname">
+				<input type="hidden" id="activetab" value="" id="activetab" name="activetab">
+				<input type="hidden" id="fieldname" value="" name="fieldname">
                 <input type="hidden" name="{sec_token_name}" value="{sec_token}">
                 <input type="hidden" name="form_submit" value="true">
                 <div id="ce_{subgroup_name}">
@@ -63,8 +62,8 @@
     <!-- BEGIN fieldset -->
                         <li>
                         <div id="{index}" style="overflow:hidden;">
-                            <fieldset>
-                                <legend class="title" style="padding-bottom:0">{fs_display}</legend>
+                            <fieldset class="uk-fieldset">
+                                <legend class="uk-legend title" style="padding-bottom:0">{fs_display}</legend>
     <!-- BEGIN notes -->
                                 <div class="notes">
                                     <h4>{fs_display}</h4>
@@ -72,7 +71,7 @@
                                     <span class="uk-text-small">{fs_warning}</span>
                                 </div>
     <!-- END notes -->
-                                <table class="uk-table">
+								<table class="uk-table">
                                     {fs_contents}
                                 </table>
                             </fieldset>
@@ -84,8 +83,8 @@
 
                 <div class="uk-grid uk-margin">
                     <div class="uk-width-1-1@s">
-                        <button class="uk-button uk-button-success" type="submit" value="{lang_save_changes}">{lang_save_changes}</button>
-                        <button class="uk-button uk-button-default cancel" type="reset" name="form_reset" value="{lang_reset_form}">{lang_reset_form}</button>
+                        <button class="uk-button-success uk-button-small" type="submit" value="{lang_save_changes}">{lang_save_changes}</button>
+                        <button class="uk-button-default uk-button-small cancel" type="reset" name="form_reset" value="{lang_reset_form}">{lang_reset_form}</button>
                     </div>
                 </div>
             </form>
