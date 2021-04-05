@@ -169,7 +169,7 @@ body {
 
 .tm-navbar-nav > li > a {
     border: medium none;
-    border-radius: 3px;
+    border-radius: 4px;
     font-size: 15px;
     margin: 0;
     text-shadow: none;
@@ -599,7 +599,7 @@ p.tm-article-meta {
 }
 
 .uk-button {
-    border-radius: 4px;
+    border-radius: 3px;
 }
 .uk-button-mini {
   min-height: 20px;
@@ -2753,6 +2753,20 @@ a.uk-thumbnail:focus {
 header nav {
     min-height:60px;
 }
+
+/* Round the subnav menu button similar to CMS theme */
+.uk-subnav-pill > * > :first-child {
+	border-radius: 4px;
+}
+
+/* Condense horizontal subnav menu a bit */
+ul.uk-subnav > li {
+	padding-left: 0px;
+}
+ul.uk-subnav > li:first-of-type {
+	padding-left:20px;
+}
+
 .uk-navbar-nav > li > a,
 header nav button,
 .uk-navbar-item,
