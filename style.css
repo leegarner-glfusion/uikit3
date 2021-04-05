@@ -2765,8 +2765,8 @@ header nav button,
 .cc-grid-item {
     text-align: center;
     margin-top: 20px;
-    width:100px;
-    height:100px;
+    width: 85px;
+    height: 85px;
 }
 
 /*.uk-input {
@@ -2786,9 +2786,3 @@ header nav button,
     padding: 0px;
 }
 
-.cc-grid-item {
-    text-align: center;
-    margin-top: 20px;
-    width:100px;
-    height:100px;
-}
