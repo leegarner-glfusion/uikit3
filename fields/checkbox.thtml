@@ -1,0 +1,3 @@
+{# begin {templatelocation} #}
+<input type="checkbox" value="{opt_value}" {if disabled}disabled="disabled"{!endif} {attributes} {!if checked{checked="checked"{!endif}>&nbsp;{opt_name}
+{# end {templatelocation} #}

@@ -2,7 +2,11 @@
 <div class="uk-margin">
     <label class="uk-form-label" for="theme">{lang_theme}</label>
     <div class="uk-form-controls uk-form-controls-text">
-        {theme_selector}
+		<select class="uk-select uk-form-width-small" id="theme" name="theme">
+<!-- BEGIN ThemeSelect -->
+			<option value="{theme}" {!if selected}selected="selected"{!endif}>{theme_dscp}</option>
+<!-- END ThemeSelect -->
+		</select>
     </div>
 </div>
 {# end {templatelocation} #}

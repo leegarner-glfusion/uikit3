@@ -40,7 +40,7 @@
         <div class="uk-margin">
             <label class="uk-form-label" for="username">{lang_username}</label>
             <div class="uk-form-controls">
-                <input class="required" type="text" id="username" name="username" value="{username}" autofocus>
+                <input class="uk-input uk-form-small uk-width-medium required" type="text" id="username" name="username" value="{username}" autofocus>
                 <br><label for="username" generated="true" class="error"></label>
             </div>
         </div>
@@ -48,7 +48,7 @@
         <div class="uk-margin">
             <label class="uk-form-label" for="email">{lang_email}</label>
             <div class="uk-form-controls">
-                <input class="required email" type="text" id="email" name="email" value="{email}" {!if !show_email_confirmation} disabled="disabled" {!endif}>
+                <input class="uk-input uk-form-small uk-width-medium required email" type="text" id="email" name="email" value="{email}" {!if !show_email_confirmation} disabled="disabled" {!endif}>
                 <br><label for="email" generated="true" class="error"></label>
             </div>
         </div>
@@ -57,26 +57,26 @@
         <div class="uk-margin">
             <label class="uk-form-label" for="email_conf">{lang_email_conf}</label>
             <div class="uk-form-controls">
-                <input class="required email" type="text" id="email_conf" name="email_conf" value="{email_conf}">
+                <input class="uk-input uk-form-small uk-width-medium required email" type="text" id="email_conf" name="email_conf" value="{email_conf}">
                 <br><label for="email_conf" generated="true" class="error"></label>
             </div>
         </div>
 {!endif}
 
 {!if show_password_entry}
-        <div class="uk-grid uk-margin">
-            <div class="uk-width-1-2@s">
+        <div uk-grid class="uk-margin uk-child-width-1-1 uk-child-width-1-2@m">
+            <div>
                 <div class="uk-margin">
                     <label class="uk-form-label" for="passwd">{lang_passwd}</label>
                     <div class="uk-form-controls">
-                        <input class="required" type="password" id="passwd" name="passwd" value="" onkeyup="runPassword(this.value, 'mypassword');">
+                        <input class="uk-input uk-form-small uk-width-medium required" type="password" id="passwd" name="passwd" value="" onkeyup="runPassword(this.value, 'mypassword');">
                         <br><label for="passwd" generated="true" class="error"></label>
                     </div>
                 </div>
                 <div class="uk-margin">
                     <label class="uk-form-label" for="passwd_conf">{lang_passwd_conf}</label>
                     <div class="uk-form-controls">
-                        <input class="required" type="password" id="passwd_conf" name="passwd_conf" value="">
+                        <input class="uk-input uk-form-small uk-width-medium required" type="password" id="passwd_conf" name="passwd_conf" value="">
                         <br><label for="passwd_conf" generated="true" class="error"></label>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                     </div>
                 </div>
             </div>
-            <div class="uk-width-1-2@s">
+            <div>
 {!if lang_password_help}
                 <div class="uk-alert uk-alert-primary">
                     {lang_password_help}
@@ -103,7 +103,7 @@
         <div class="uk-margin">
             <label class="uk-form-label" for="fullname">{lang_fullname}</label>
             <div class="uk-form-controls">
-                <input class="{!if require_fullname} required{!endif}" type="text" id="fullname" name="fullname" value="{fullname}">
+                <input class="uk-input uk-form-small uk-width-medium {!if require_fullname} required{!endif}" type="text" id="fullname" name="fullname" value="{fullname}">
                 <br><label for="fullname" generated="true" class="error"></label>
             </div>
         </div>
@@ -124,9 +124,9 @@
 
         <div class="uk-margin">
 {!if recaptcha}
-            <button id="regsubmit" class="uk-button-primary" type="submit" name="submit" value="{lang_register}" disabled="disabled">{lang_register}</button>
+            <button id="regsubmit" class="uk-button uk-button-primary" type="submit" name="submit" value="{lang_register}" disabled="disabled">{lang_register}</button>
 {!else}
-            <button class="uk-button-primary uk-text-center uk-align-center type="submit" name="submit" value="{lang_register}">{lang_register}</button>
+            <button class="uk-button uk-button-primary uk-text-center uk-align-center type="submit" name="submit" value="{lang_register}">{lang_register}</button>
 {!endif}
         </div>
     </form>

@@ -1,7 +1,7 @@
 {!!if {type}=='info' !!}
 <script>
 	jQuery(document).ready(function($) {
-		$.UIkit.notify('{message}',{status:'success', pos:'{position}', timeout: {timeout} });
+		glFusion.notify('{message}', 'success');
 	});
 </script>
 {!else}
@@ -12,8 +12,8 @@
 {!endif}
 <div class="{class}" uk-alert>
 {!if !persist}
-    <a href="" class="uk-alert-close" uk-close></a>
+	<a href="" class="uk-alert-close" uk-close></a>
 {!endif}
-    <p>{message}</p>
+	<p>{message}</p>
 </div>
 {!endif}

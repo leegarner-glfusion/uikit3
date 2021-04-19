@@ -3,125 +3,126 @@
 <script src="{site_url}/javascript/pwd_strength.js"></script>
 
 <div id="pe_navbar" class="uk-margin" style="display:none">
-    {navbar}
+	{navbar}
 </div>
 <div class="uk-clearfix"></div>
 <div class="uk-clearfix">
 
-    <form class="uk-form uk-form-horizontal" id="profileform" name="profileform" action="{site_url}/usersettings.php" method="post" {enctype}>
-        <div id="pe_preview" class="jsenabled_hide" style="display:none;">
-            <fieldset class="uk-fieldset">
-                <legend class="uk-legend">{lang_preview_title}</legend>
-                {preview}
-            </fieldset>
-        </div>
+	<form class="uk-form-horizontal" id="profileform" name="profileform" action="{site_url}/usersettings.php" method="post" {enctype}>
+		<div id="pe_preview" class="jsenabled_hide" style="display:none;">
+			<fieldset class="uk-fieldset">
+				<legend class="uk-legend">{lang_preview_title}</legend>
+				{preview}
+			</fieldset>
+		</div>
 
-        <div id="pe_namepass" class="jsenabled_show">
+		<div id="pe_namepass" class="jsenabled_show">
 
-            <fieldset class="uk-fieldset">
-                <legend class="uk-legend">{lang_name_legend}</legend>
-                <div class="uk-card uk-card-default">
-                    {username_option}
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="fullname">{lang_fullname}</label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" type="text" id="fullname" name="fullname" maxlength="80" value="{fullname_value}" />
-                        </div>
-                    </div>
-                </div>
-                {plugin_namepass_name}
-            </fieldset>
+			<fieldset class="uk-fieldset">
+				<legend class="uk-legend">{lang_name_legend}</legend>
+				<div class="uk-card uk-card-default">
+					{username_option}
+					<div class="uk-margin">
+						<label class="uk-form-label" for="fullname">{lang_fullname}</label>
+						<div class="uk-form-controls">
+							<input class="uk-input" type="text" id="fullname" name="fullname" maxlength="80" value="{fullname_value}" />
+						</div>
+					</div>
+				</div>
+				{plugin_namepass_name}
+			</fieldset>
 
-            <fieldset class="uk-fieldset">
-                <legend class="uk-legend">{lang_password_email_legend}</legend>
-                <div class="uk-card uk-card-default uk-card-body-primary uk-margin">
-                    <span class="warningsmall"><p>{lang_enter_current_password}</p></span>
-                    <p>{lang_password_help}</p>
-                </div>
+			<fieldset class="uk-fieldset">
+				<legend class="uk-legend">{lang_password_email_legend}</legend>
+				<div class="uk-card uk-card-default uk-card-body-primary uk-margin">
+					<span class="warningsmall"><p>{lang_enter_current_password}</p></span>
+					<p>{lang_password_help}</p>
+				</div>
 
-                <div class="uk-card uk-card-default">
-                    {current_password_option}
-                    {password_option}
-                    {resynch_option}
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="cooktime">{lang_cooktime}</label>
-                        <div class="uk-form-controls uk-form-controls-text">
-                            {cooktime_selector}
-                        </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="email">{lang_email}</label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" type="text" id="email" name="email" value="{email_value}">
-                        </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="email_conf">{lang_email_conf}</label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" type="text" id="email_conf" name="email_conf" value="{email_value}">
-                        </div>
-                    </div>
-                    {plugin_namepass_pwdemail}
-                </div>
+				<div class="uk-card uk-card-default">
+					{password_option}
+					{resynch_option}
+					<div class="uk-margin">
+						<label class="uk-form-label" for="cooktime">{lang_cooktime}</label>
+						<div class="uk-form-controls uk-form-controls-text">
+							<select class="uk-select uk-form-width-small" id="cooktime" name="cooktime">
+								{cooktime_selector}
+							</select>
+						</div>
+					</div>
+					<div class="uk-margin">
+						<label class="uk-form-label" for="email">{lang_email}</label>
+						<div class="uk-form-controls">
+							<input class="uk-input" type="text" id="email" name="email" value="{email_value}">
+						</div>
+					</div>
+					<div class="uk-margin">
+						<label class="uk-form-label" for="email_conf">{lang_email_conf}</label>
+						<div class="uk-form-controls">
+							<input class="uk-input" type="text" id="email_conf" name="email_conf" value="{email_value}">
+						</div>
+					</div>
+					{plugin_namepass_pwdemail}
+				</div>
 
-            </fieldset>
-            {plugin_namepass}
-        </div>
+			</fieldset>
+			{plugin_namepass}
+		</div>
 
-        {twofactor}
+		{twofactor}
 
-        <!--below needs fixing for mobile-->
+		<!--below needs fixing for mobile-->
 
-        <div id="pe_userinfo" class="jsenabled_hide">
-            <fieldset class="uk-fieldset">
-                <legend class="uk-legend">{lang_personal_info_legend}</legend>
-                <div class="uk-card uk-card-default uk-card-body-primary uk-margin">
-                    {lang_userinfo_help}
-                </div>
-                <div class="uk-card uk-card-body uk-margin-bottom">
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="homepage">{lang_homepage}</label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" type="text" id="homepage" name="homepage" value="{homepage_value}">
-                        </div>
-                    </div>
-                    {customfields}
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="location">{lang_location}</label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" type="text" id="location" name="location" value="{location_value}">
-                        </div>
-                    </div>
-                    {userphoto_option}
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="sig">{lang_signature}</label>
-                        <div class="uk-form-controls">
-                            <textarea class="uk-form-width-medium texteditor" id="sig" name="sig">{signature_value}</textarea>
-                        </div>
-                    </div>
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="about">{lang_about}</label>
-                        <div class="uk-form-controls uk-form-controls-text">
-                            <textarea class="uk-form-width-medium texteditor" id="about" rows="10" name="about">{about_value}</textarea>
-                        </div>
-                    </div>
+		<div id="pe_userinfo" class="jsenabled_hide">
+			<fieldset class="uk-fieldset">
+				<legend class="uk-legend">{lang_personal_info_legend}</legend>
+				<div class="uk-card uk-card-default uk-card-body-primary uk-margin">
+					{lang_userinfo_help}
+				</div>
+				<div class="uk-card uk-card-body uk-margin-bottom">
+					<div class="uk-margin">
+						<label class="uk-form-label" for="homepage">{lang_homepage}</label>
+						<div class="uk-form-controls">
+							<input class="uk-input" type="text" id="homepage" name="homepage" value="{homepage_value}">
+						</div>
+					</div>
+					{customfields}
+					<div class="uk-margin">
+						<label class="uk-form-label" for="location">{lang_location}</label>
+						<div class="uk-form-controls">
+							<input class="uk-input" type="text" id="location" name="location" value="{location_value}">
+						</div>
+					</div>
+					{userphoto_option}
+					<div class="uk-margin">
+						<label class="uk-form-label" for="sig">{lang_signature}</label>
+						<div class="uk-form-controls">
+							<textarea class="uk-form-width-medium texteditor" id="sig" name="sig">{signature_value}</textarea>
+						</div>
+					</div>
+					<div class="uk-margin">
+						<label class="uk-form-label" for="about">{lang_about}</label>
+						<div class="uk-form-controls uk-form-controls-text">
+							<textarea class="uk-form-width-medium texteditor" id="about" rows="10" name="about">{about_value}</textarea>
+						</div>
+					</div>
 
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="pgpkey">{lang_pgpkey}</label>
-                        <div class="uk-form-controls uk-form-controls-text">
-                            <textarea class="uk-form-width-medium texteditor" rows="7" id="pgpkey" name="pgpkey">{pgpkey_value}</textarea>
-                        </div>
-                    </div>
+					<div class="uk-margin">
+						<label class="uk-form-label" for="pgpkey">{lang_pgpkey}</label>
+						<div class="uk-form-controls uk-form-controls-text">
+							<textarea class="uk-form-width-medium texteditor" rows="7" id="pgpkey" name="pgpkey">{pgpkey_value}</textarea>
+						</div>
+					</div>
 
-                </div>
-            </fieldset>
+				</div>
+			</fieldset>
 
 {!if social_followme_enabled}
-            <fieldset class="uk-fieldset">
-                <legend class="uk-legend">{$LANG04[198]}</legend>
-                <div class="uk-card uk-margin">
-                    {$LANG04[199]}
-                </div>
+			<fieldset class="uk-fieldset">
+				<legend class="uk-legend">{$LANG04[198]}</legend>
+				<div class="uk-card uk-margin">
+					{$LANG04[199]}
+				</div>
 				<table class="uk-table uk-table-small">
 					<tr>
 						<th>{$LANG04[200]}</th>
@@ -135,69 +136,76 @@
 						</td>
 					</tr>
 <!-- END social_links -->
-                </table>
-            </fieldset>
+				</table>
+			</fieldset>
 {!endif}
 
-            {plugin_userinfo_personalinfo}
+			{plugin_userinfo_personalinfo}
 
-            {plugin_userinfo}
-        </div>
+			{plugin_userinfo}
+		</div>
 
-        {prefs}
+		{prefs}
 
-        {plugin_panel}
+		{plugin_panel}
 
-        <input type="hidden" name="uid" value="{uid_value}" />
-        <input type="hidden" name="mode" value="saveuser" />
-        <input type="hidden" name="username" value="{username_value}" />
-        <div id="save_button" class="uk-margin">
-            <button class="uk-button uk-button-primary" type="submit" name="btnsubmit" value="{lang_submit}">{lang_submit}</button>
-            <button class="uk-button uk-button-danger" type="submit" name="btncancel" value="{lang_cancel}">{lang_cancel}</button>
-        </div>
+		<input type="hidden" name="uid" value="{uid_value}" />
+		<input type="hidden" name="mode" value="saveuser" />
+		<input type="hidden" name="username" value="{username_value}" />
+
+		<div id="save_button" class="uk-margin">
+			<div class="uk-panel uk-panel-box uk-panel-box-primary uk-margin uk-alert uk-alert-danger">
+				<span class="warningsmall"><p>{lang_enter_current_password}</p></span>
+			</div>
+
+			<div class="uk-margin-bottom">
+				{current_password_option}
+			</div>
+
+			<button class="uk-button uk-button-primary" type="submit" name="btnsubmit" value="{lang_submit}">{lang_submit}</button>
+			<button class="uk-button uk-button-danger" type="submit" name="btncancel" value="{lang_cancel}">{lang_cancel}</button>
+		</div>
 
 {!if delete_account_option}
-        <div id="pe_delete" class="jsenabled_hide">
-            {delete_account_option}
-        </div>
+		<div id="pe_delete" class="jsenabled_hide">
+			{delete_account_option}
+		</div>
 {!endif}
 
-
-    </form>
+	</form>
 </div>
 <!-- end needs fixing -->
 
-{# JS Functions which will execute only if JS enabled will un-hide the special features that enhance the profile editor #}
 <script>
-    /* Initially the navbar is hidden - in case JS is disabled. Enable it now */
-    document.getElementById('pe_navbar').style.display='';
+	$("#profileform").validate();
 
-    /* Now cycle through the profile tabs as the number in the template could have been modified (personalized)
-    If you add custom panels, just ensure you use the class jsenabled_hide or jsenabled_show
-    Build an object that can then be referenced in the functon showhideProfileEditorDiv
-    */
+	/* Initially the navbar is hidden - in case JS is disabled. Enable it now */
+	document.getElementById('pe_navbar').style.display='';
 
-    var profilepanels = new Object;
-    var el;
-    el=document.getElementsByTagName('div');
-    for(i=0;i<el.length;i++) {
-        var divname = el[i].id
-        if(el[i].className == 'jsenabled_show'){
-            el[i].style.display = '';
-            profilepanels[divname] = 'show';
-        } else if(el[i].className == 'jsenabled_hide'){
-            el[i].style.display = 'none';
-            profilepanels[divname] = 'hidden';
-        }
-    }
-</script>
-<script>
-    $( document ).ready(function() {
+	/* Now cycle through the profile tabs as the number in the template could have been modified (personalized)
+	If you add custom panels, just ensure you use the class jsenabled_hide or jsenabled_show
+	Build an object that can then be referenced in the functon showhideProfileEditorDiv
+	*/
+
+	var profilepanels = new Object;
+	var el;
+	el=document.getElementsByTagName('div');
+	for(i=0;i<el.length;i++) {
+		var divname = el[i].id
+		if(el[i].className == 'jsenabled_show'){
+			el[i].style.display = '';
+			profilepanels[divname] = 'show';
+		} else if(el[i].className == 'jsenabled_hide'){
+			el[i].style.display = 'none';
+			profilepanels[divname] = 'hidden';
+		}
+	}
+	$( document ).ready(function() {
 {!if delete_active}
-        showhideProfileEditorDiv('pe_delete', {delete_idx});
+		showhideProfileEditorDiv('pe_delete', {delete_idx});
 {!else}
-        showhideProfileEditorDiv('pe_namepass', 1);
+		showhideProfileEditorDiv('pe_namepass', 1);
 {!endif}
-    });
+	});
 </script>
 {# end {templatelocation} #}
