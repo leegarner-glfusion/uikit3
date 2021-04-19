@@ -17,6 +17,7 @@ if (!defined ('GVERSION')) {
 
 $themeAPI = 3;
 $_SYSTEM['framework'] = 'uikit3';
+$_SYSTEM['base_theme'] = '';
 $_SYSTEM['disable_mootools'] = true;
 $_IMAGE_TYPE = 'png';
 $_SYSTEM['disable_jquery_menu'] = true;     // not needed for this theme
@@ -119,14 +120,17 @@ $outputHandle->addScriptFile($_CONF['path_html'].'javascript/jquery/jquery-ui.mi
 
 $outputHandle->addScriptFile($_CONF['path_html'].'javascript/ps.js');
 $outputHandle->addScriptFile($_CONF['path_layout'].'js/jquery.smartmenus.min.js');
+$outputHandle->addScriptFile($_CONF['path_layout'].'js/glfusion.js');
 
 // Load our CSS specific to this theme
 $outputHandle->addCSSFile($_CONF['path_layout'].'css/uikit.css',HEADER_PRIO_VERYHIGH);
-$outputHandle->addCSSFile($_CONF['path_layout'].'css/uk-icon.css',HEADER_PRIO_VERYHIGH);
+$outputHandle->addCSSFile($_CONF['path_layout'].'css/uk2-compat.css',HEADER_PRIO_VERYHIGH);
+$outputHandle->addCSSFile($_CONF['path_layout'].'css/uk2-icon.css',HEADER_PRIO_VERYHIGH);
+$outputHandle->addCSSFile($_CONF['path_layout'].'css/uk2-width.css',HEADER_PRIO_VERYHIGH);
 
 
-//$outputHandle->addScriptFile($_CONF['path_layout'].'components/datetimepicker/jquery.datetimepicker.full.min.js');
-//$outputHandle->addCSSFile($_CONF['path_layout'].'components/datetimepicker/jquery.datetimepicker.min.css',HEADER_PRIO_VERYHIGH);
+$outputHandle->addScriptFile($_CONF['path_layout'].'components/datetimepicker/jquery.datetimepicker.full.min.js');
+$outputHandle->addCSSFile($_CONF['path_layout'].'components/datetimepicker/jquery.datetimepicker.min.css',HEADER_PRIO_VERYHIGH);
 
 //
 /*$outputHandle->addCSSFile($_CONF['path_layout'].'css/components/accordion'.$styleType.'min.css',HEADER_PRIO_VERYHIGH);

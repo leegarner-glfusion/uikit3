@@ -1,0 +1,76 @@
+/* Additional width modifiers from UIkit v2 not included in v3 */
+
+/* Tenths */
+.uk-width-1-10 {
+  width: 10%;
+}
+.uk-width-3-10 {
+  width: 30%;
+}
+.uk-width-7-10 {
+  width: 70%;
+}
+.uk-width-9-10 {
+  width: 90%;
+}
+/* Phone landscape and bigger */
+@media (min-width: 640px) {
+  .uk-width-1-10\@s {
+    width: 10%;
+  }
+  .uk-width-3-10\@s {
+    width: 30%;
+  }
+  .uk-width-7-10\@s {
+    width: 70%;
+  }
+  .uk-width-9-10\@s {
+    width: 90%;
+  }
+}
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .uk-width-1-10\@m {
+    width: 10%;
+  }
+  .uk-width-3-10\@m {
+    width: 30%;
+  }
+  .uk-width-7-10\@m {
+    width: 70%;
+  }
+  .uk-width-9-10\@m {
+    width: 90%;
+  }
+}
+/* Desktop and bigger */
+@media (min-width: 1200px) {
+  .uk-width-1-10\@l {
+    width: 10%;
+  }
+  .uk-width-3-10\@l {
+    width: 30%;
+  }
+  .uk-width-7-10\@l {
+    width: 70%;
+  }
+  .uk-width-9-10\@l {
+    width: 90%;
+  }
+}
+/* Large screen and bigger */
+@media (min-width: 1600px) {
+  .uk-width-1-10\@xl {
+    width: 10%;
+  }
+  .uk-width-3-10\@xl {
+    width: 30%;
+  }
+  .uk-width-7-10\@xl {
+    width: 70%;
+  }
+  .uk-width-9-10\@xl {
+    width: 90%;
+  }
+}
+
