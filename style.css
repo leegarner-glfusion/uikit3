@@ -1,5 +1,5 @@
-/*@ glFusion CMS Theme 1.7.1 | https://www.glfusion.org
-(c) 2017 glFusion | GNU GPLv2 License */
+/*@ glFusion UIkit Theme | https://www.glfusion.org
+(c) 2021 glFusion | GNU GPLv2 License */
 /* ========================================================================
 This should contain site wide styles that augment the UIKIT styles
 
@@ -32,6 +32,11 @@ body {
 
 .tm-navbar-container:not(.uk-navbar-transparent) {
     background-color: #325482;
+}
+
+.tm-navbar-nav-dropdown,
+.tm-navbar-dropdown {
+	padding: 10px;
 }
 
 /*
@@ -593,173 +598,6 @@ p.tm-article-meta {
 	color: #fff;
 	background: #ca3523;
 	border-color: rgba(0, 0, 0, 0.2);
-}
-.uk-icon-google:before {
-	content: "\f1a0";
-}
-
-.uk-button {
-    border-radius: 3px;
-}
-.uk-button-mini {
-  min-height: 20px;
-  padding: 0 6px;
-  line-height: 18px;
-  font-size: 11px;
-}
-
-/* social share */
-.uk-button.uk-button-facebook,
-.uk-icon-button.uk-button-facebook {
-	background-color: #3b5998;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-button.uk-button-google-plus,
-.uk-icon-button.uk-button-google-plus {
-	background-color: #dd4b39;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-button.uk-button-twitter,
-.uk-icon-button.uk-button-twitter {
-	background-color: #55acee;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-button.uk-button-vk {
-	background-color: #537599;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-button.uk-button-ok {
-	background-color: #f2720c;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-button.uk-button-livejournal {
-	background-color: #000;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-button.uk-button-mail-ru {
-	background-color: #168de2;
-	color: #f7aa21;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-button.uk-button-linkedin,
-.uk-icon-button.uk-button-linkedin,
-.uk-button.uk-button-linkedin-square,
-.uk-icon-button.uk-button-linkedin-square  {
-	background-color: #0077b5;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-button.uk-button-reddit,
-.uk-icon-button.uk-button-reddit {
-	background-color: #0077b5;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-button.uk-button-envelope {
-	background-color: #0077b5;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-
-.uk-button.uk-button-print {
-	background-color: #0077b5;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-button.uk-button-pinterest {
-	background-color: #dd4b39;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-button.uk-button-pinterest-p,
-.uk-icon-button.uk-button-pinterest-p {
-	background-color: #dd4b39;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-button.uk-button-youtube,
-.uk-icon-button.uk-button-youtube {
-	background-color: #000;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-button.uk-button-github,
-.uk-icon-button.uk-button-github {
-	background-color: #323131;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-button.uk-button-github-alt,
-.uk-icon-button.uk-button-github-alt {
-	background-color: #323131;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-icon-button.uk-button-instagram {
-	background-color: #2E5E86;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-
-.uk-icon-button.uk-button-vimeo {
-	background-color: #1AB7EA;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-icon-button.uk-button-flickr {
-	background-color: #000;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-icon-button.uk-button-foursquare {
-	background-color: #F94877;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-
-.uk-icon-button.uk-button-yelp {
-	background-color: #DB292F;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-icon-button.uk-button-dribbble {
-	background-color: #C32361;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
-}
-.uk-icon-button.uk-button-commenting-o {
-	background-color: #8D94FD;
-	color: #fff;
-	background-image: none;
-	text-shadow: none;
 }
 
 /* Follow Me Button semantics
@@ -2538,70 +2376,6 @@ input.error {
 	display: block;
 	border-bottom: 1px solid #000;
 }
-/*
-.slider_checkbox input[type=checkbox]:checked:before,
-.uk-form.slide_checkbox input[type=checkbox]:indeterminate:before {
-	content: "" !important;
-}
-
-.slider_checkbox input[type='checkbox'] {
-	display:inline;
-	vertical-align:middle;
-	margin-bottom: 10px;
-	-webkit-appearance: button;
-	border:none;
-	background-color: #c63d3d;
-	width: 63px;
-	height: 28px;
-	border-radius: 3px;
-	box-shadow: inset 0 1px 4px rgba(0,0,0,.2);
-	cursor: pointer;
-	position: relative;
-	transition: background-color 1s;
-}
-
-.slider_checkbox input[type='checkbox'].onoff{
-	background-color: #c63d3d;
-}
-.slider_checkbox input[type='checkbox']:after{
-	content:"\f00d";
-	font-family: FontAwesome;
-  font-size: 18px;
-  -webkit-font-smoothing: antialiased;
-  text-align: center;
-  line-height: 22px;
-  color: #00a8e6;
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 2px;
-	width: 45%;
-	height: 80%;
-	background-color: #fdfdfd;
-	margin: 4%;
-	border-radius: 3px;
-	box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	background: rgb(255,255,255);
-	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(243,243,243,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(243,243,243,1)));
-	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 100%);
-	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 100%);
-	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f3f3',GradientType=0 );
-	transition: .5s all;
-}
-
-.slider_checkbox input[type='checkbox']:checked{
-	background-color: #79d122;
-}
-
-.slider_checkbox input[type='checkbox']:checked:after {
-	left: 45%;
-	content: "\f00c";
-}
-
-*/
 
 /* this reverses the order for things like draft flag yes / now - but our display is published yes / no */
 
@@ -2661,80 +2435,6 @@ pre {
 	line-height:2 !important;
 }
 
-.uk-button-* {
-    font-size: 1rem;
-}
-
-.uk-button-success {
-    background-color: #3A9150;
-    color: #fff;
-    border: 1px solid transparent;
-}
-.uk-button-success:hover,
-.uk-button-success:focus {
-    background-color: green;
-    color: #fff;
-    text-decoration: none;
-}
-/* OnClick + Active */
-/*.uk-button-primary:active,
-.uk-button-primary.uk-active {
-  background-color: #3A9150;
-  color: #fff;
-}*/
-
-
-.uk-thumbnail {
-  /* 1 */
-  display: inline-block;
-  /* 2 */
-  max-width: 100%;
-  /* 3 */
-  box-sizing: border-box;
-  /* 3 */
-  margin: 0;
-  /* 4 */
-  padding: 4px;
-  border: 1px solid #ddd;
-  background: #fff;
-}
-/*
- * Hover state for `a` elements
- * 1. Apply hover style also to focus state
- * 2. Needed for caption
- * 3. Remove default focus style
- */
-a.uk-thumbnail:hover,
-a.uk-thumbnail:focus {
-  border-color: #aaaaaa;
-  background-color: #fff;
-  /* 2 */
-  text-decoration: none;
-  /* 3 */
-  outline: none;
-}
-/* Caption
- ========================================================================== */
-.uk-thumbnail-caption {
-  padding-top: 4px;
-  text-align: center;
-  color: #444;
-}
-/* Sizes
- ========================================================================== */
-.uk-thumbnail-mini {
-  width: 150px;
-}
-.uk-thumbnail-small {
-  width: 200px;
-}
-.uk-thumbnail-medium {
-  width: 300px;
-}
-.uk-thumbnail-large {
-  width: 400px;
-}
-
 .tm-table th
 {
     color: inherit;
@@ -2754,25 +2454,6 @@ header nav {
     min-height:60px;
 }
 
-/* Round the subnav menu button similar to CMS theme */
-.uk-subnav-pill > * > :first-child {
-	border-radius: 4px;
-}
-
-/* Condense horizontal subnav menu a bit */
-ul.uk-subnav > li {
-	padding-left: 0px;
-}
-ul.uk-subnav > li:first-of-type {
-	padding-left:20px;
-}
-
-.uk-navbar-nav > li > a,
-header nav button,
-.uk-navbar-item,
-.uk-navbar-toggle {
-    min-height: 40px;
-}
 .tm-navbar-toggle {
     color: #eee;
 }
@@ -2783,20 +2464,6 @@ header nav button,
     height: 85px;
 }
 
-/*.uk-input {
-    width: inherit;
-}*/
-
-/* Darken inputs and other text. Light grey against white doesn't work well. */
-.uk-input, .uk-select, .uk-textarea {
-    color: #333;
-    border: 1px solid #666;
-}
-.uk-table th {
-    color: inherit;
-}
-
 .tm-card-menu {
     padding: 0px;
 }
-
