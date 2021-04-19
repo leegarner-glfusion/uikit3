@@ -1,6 +1,6 @@
 {# begin {templatelocation} #}
 {!if login_button}
-    <button class="uk-button-primary" uk-toggle="target: #modalOpen" type="button">Login</button>
+    <button class="uk-button uk-button-success uk-button-small" uk-toggle="target: #modalOpen" type="button">{$LANG_LOGIN[3]}</button>
 <div id="modalOpen" uk-modal>
     <div class="uk-modal-dialog uk-modal-dialog-medium uk-modal-body">
         <a href="#" class="uk-modal-close uk-close floatright">Close</a>
