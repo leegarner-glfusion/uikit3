@@ -21,20 +21,22 @@
 	<div class="uk-margin">
 		<label class="uk-form-label" for="maxstories">{lang_maxstories}</label>
 		<div class="uk-form-controls uk-form-controls-text">
-			<input class="uk-input" type="text" size="3" maxlength="3" id="maxstories" name="maxstories" value="{maxstories_value}" />
+			<input class="uk-input uk-form-width-small" type="text" size="3" maxlength="3" id="maxstories" name="maxstories" value="{maxstories_value}" />
 		</div>
 	</div>
 	<div class="uk-margin">
 		<label class="uk-form-label" for="tzid">{lang_timezone}</label>
 		<div class="uk-form-controls uk-form-controls-text">
-			{timezone_selector}
+			<select class="uk-select uk-form-width-medium" id="tzid" name="tzid">
+				{timezone_options}
+			</select>
 		</div>
 	</div>
 	<div class="uk-margin">
 		<label class="uk-form-label" for="dfid">{lang_dateformat}</label>
 		<div class="uk-form-controls uk-form-controls-text">
 			<select class="uk-select uk-form-width-small" id="dfid" name="dfid">
-				{dateformat_selector}
+				{dateformat_options}
 			</select>
 		</div>
 	</div>
@@ -42,9 +44,7 @@
 		<label class="uk-form-label" for="select_result_format">{lang_search_format}</label>
 		<div class="uk-form-controls uk-form-controls-text">
 			<select class="uk-select uk-form-width-small" name="search_result_format" id="search_result_format">
-<!-- BEGIN SrchFmtOpts -->
-				<option value="{type}" {!if selected}selected="selected"{!endif}>{name}</option>
-<!-- END SrchFmtOpts -->
+				{search_format_options}
 			</select>
 		</div>
 	</div>
