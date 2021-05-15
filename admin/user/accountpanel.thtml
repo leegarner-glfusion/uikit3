@@ -4,32 +4,32 @@
         <legend class="uk-legend">{lang_name_legend}</legend>
         <div class="uk-margin">
             <label class="uk-form-label" for="">{lang_userid}</label>
-            <div class="uk-form-controls">
+            <div class="uk-form-controls uk-form-controls-text">
                 {user_id}<input type="hidden" name="uid" value="{user_id}">
             </div>
         </div>
         <div class="uk-margin">
             <label class="uk-form-label" for="">{lang_regdate}</label>
-            <div class="uk-form-controls">
+            <div class="uk-form-controls uk-form-controls-text">
                 <input type="hidden" name="regdate" value="{regdate_timestamp}"/>{user_regdate}
             </div>
         </div>
         <div class="uk-margin">
             <label class="uk-form-label" for="">{lang_lastlogin}</label>
-            <div class="uk-form-controls">
+            <div class="uk-form-controls uk-form-controls-text">
                 {user_lastlogin}
             </div>
         </div>
         <div class="uk-margin">
             <label class="uk-form-label" for="new_username">{lang_username}</label>
-            <div class="uk-form-controls">
-                <input class="required" type="text" maxlength="32" id="new_username" name="new_username" value="{user_name}">
+            <div class="uk-form-controls uk-form-controls-text">
+                <input class="uk-input uk-form-width-medium required" type="text" maxlength="32" id="new_username" name="new_username" value="{user_name}">
             </div>
         </div>
          <div class="uk-margin">
             <label class="uk-form-label" for="fullname">{lang_fullname}</label>
             <div class="uk-form-controls">
-                <input type="text" id="fullname" name="fullname" maxlength="80" value="{fullname_value}"/>
+                <input class="uk-input uk-form-width-medium" type="text" id="fullname" name="fullname" maxlength="80" value="{fullname_value}"/>
             </div>
         </div>
 {!if remoteuserenable}
@@ -43,14 +43,16 @@
         <div class="uk-margin">
             <label class="uk-form-label" for="userstatus">{lang_user_status}</label>
             <div class="uk-form-controls">
-                {user_status}
+				<select class="uk-select uk-form-width-medium" id="user_status" name="user_status">
+	                {user_status_options}
+				</select>
             </div>
         </div>
 {!if lang_email_password}
         <div class="uk-margin">
             <label class="uk-form-label" for="emailuser">{lang_email_password}</label>
-            <div class="uk-form-controls">
-                <input type="checkbox" name="emailuser" id="emailuser" value="1" {pwd_disabled} />
+            <div class="uk-form-controls uk-form-controls-text">
+                <input class="uk-checkbox" type="checkbox" name="emailuser" id="emailuser" value="1" {pwd_disabled} />
             </div>
         </div>
 {!endif}
@@ -90,27 +92,29 @@
         </div>
         <div class="uk-margin">
             <label class="uk-form-label" for="">{$LANG04[161]}</label>
-            <div class="uk-form-controls">
-                <div id="mypassword_text" style="font-size:normal;"></div>
-                <div id="mypassword_bar"  style="display:none;"></div>
+            <div class="uk-form-controls uk-form-controls-text">
+                <div id="mypassword_text" style="font-size:normal;">&nbsp;</div>
+                <div id="mypassword_bar" style="display:none;"></div>
             </div>
         </div>
         <div class="uk-margin">
             <label class="uk-form-label" for="cooktime">{lang_cooktime}</label>
             <div class="uk-form-controls">
-                {cooktime_selector}
+				<select class="uk-select uk-form-width-medium" id="cooktime" name="cooktime">
+	                {cooktime_options}
+				</select>
             </div>
         </div>
         <div class="uk-margin">
             <label class="uk-form-label" for="email">{lang_email}</label>
             <div class="uk-form-controls">
-                <input class="required email" type="text" id="email" name="email" size="50" maxlength="96" value="{email_value}"/>
+                <input class="uk-input uk-form-width-medium required email" type="text" id="email" name="email" size="50" maxlength="96" value="{email_value}"/>
             </div>
         </div>
         <div class="uk-margin">
             <label class="uk-form-label" for="email_conf">{lang_email_conf}</label>
             <div class="uk-form-controls">
-                <input class="required email" type="text" id="email_conf" name="email_conf" size="50" maxlength="96" value="{email_value}"/>
+                <input class="uk-input uk-form-width-medium required email" type="text" id="email_conf" name="email_conf" size="50" maxlength="96" value="{email_value}"/>
             </div>
         </div>
 
