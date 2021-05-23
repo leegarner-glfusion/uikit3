@@ -9,13 +9,15 @@
 	<div class="uk-margin">
 		<label class="uk-form-label" for="menuname">{$LANG_MB01[label]}</label>
 		<div class="uk-form-controls">
-			<input class="uk-input required alphanumeric" type="text" id="menuname" name="menuname" value="{menuname}" {disabled}>
+			<input class="uk-input uk-form-width-medium required alphanumeric" type="text" id="menuname" name="menuname" value="{menuname}" {disabled}>
 		</div>
 	</div>
 	<div class="uk-margin">
 		<label class="uk-form-label" for="menutype">{$LANG_MB01[menu_type]}</label>
 		<div class="uk-form-controls">
-			{menutype_select}
+			<select class="uk-select uk-form-width-medium" id="menutype" name="menutype">
+				{menutype_select}
+			</select>
 		</div>
 	</div>
 	<div class="uk-margin">
@@ -27,7 +29,9 @@
 	<div class="uk-margin">
 		<label class="uk-form-label" for="group">{$LANG_MB01[permission]}</label>
 		<div class="uk-form-controls">
-			{group_select}
+			<select class="uk-select uk-form-width-medium" id="group" name="group">
+				{group_select}
+			</select>
 		</div>
 	</div>
 	<div class="uk-margin">
