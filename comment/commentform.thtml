@@ -89,11 +89,11 @@
 	<div class="uk-margin">
 		<label class="uk-form-label"></label>
 		<div class="uk-form-controls">
-			<button class="uk-button-primary cancel" type="submit" name="preview" value="{lang_preview}">{lang_preview}</button>
+			<button class="uk-button uk-button-primary cancel" type="submit" name="preview" value="{lang_preview}">{lang_preview}</button>
 {!if save_type}
-			<button class="uk-button-success" type="submit" name="{save_type}" value="{lang_save}">{lang_save}</button>
+			<button class="uk-button uk-button-success" type="submit" name="{save_type}" value="{lang_save}">{lang_save}</button>
 {!endif}
-			<button class="uk-button-danger cancel" type="submit" name="cancel" value="{$LANG32[24]}" >{$LANG32[24]}</button>
+			<button class="uk-button uk-button-danger cancel" type="submit" name="cancel" value="{$LANG32[24]}" >{$LANG32[24]}</button>
 		</div>
 	</div>
 </form>
