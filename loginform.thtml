@@ -2,17 +2,17 @@
 <form class="uk-form uk-form-stacked tm-loginform" action="{site_url}/users.php" method="post">
 	<div class="uk-margin">
 		<div class="uk-form-controls uk-text-center">
-			<div class="uk-form-icon">
-				<i class="uk-icon-user"></i>
-				<input class="uk-width-1-1" type="text" name="loginname" placeholder="{lang_username}" value="">
+			<div class="uk-inline">
+				<span class="uk-form-icon" uk-icon="icon:user"></span>
+				<input class="uk-input uk-form-small" type="text" name="loginname" placeholder="{lang_username}" value="">
 			</div>
 		</div>
 	</div>
 	<div class="uk-margin">
 		<div class="uk-form-controls uk-text-center">
-			<div class="uk-form-icon">
-				<i class="uk-icon-lock"></i>
-				<input class="uk-width-1-1" type="password" placeholder="{lang_password}" name="passwd">
+			<div class="uk-inline">
+				<span class="uk-form-icon" uk-icon="icon:lock"></span>
+				<input class="uk-input uk-form-small" type="password" placeholder="{lang_password}" name="passwd" value="">
 			</div>
 		</div>
 	</div>
@@ -27,11 +27,11 @@
 		<button class="uk-button-primary uk-form-width-small" type="submit" value="{lang_login}">{lang_login}</button>
 	</div>
 
-	<div class="uk-margin">
 {!if lang_signup}
+	<div class="uk-margin">
 		<a class="uk-link uk-link-muted" href="{site_url}/users.php?mode=new" rel="nofollow"><i class="uk-icon-user">&nbsp;</i>{$LANG12[3]}</a>
-{!endif}
 	</div>
+{!endif}
 	<div class="uk-margin">
 		<i class="uk-icon-question">&nbsp;</i><a class="uk-link uk-link-muted" href="{site_url}/users.php?mode=getpassword" rel="nofollow">{$LANG04[189]}</a>
 	</div>
