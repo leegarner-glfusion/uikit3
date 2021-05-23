@@ -1,6 +1,7 @@
 {# begin {templatelocation} #}
 <label class="uk-text-bold" for="service">{lang_service}</label>:
 <br>
+<select class="uk-select uk-form-small" name="service" id="service">
 {select_service}
-<br>
+</select>
 {# end {templatelocation} #}
