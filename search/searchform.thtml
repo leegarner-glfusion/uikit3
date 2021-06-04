@@ -2,19 +2,19 @@
 <h2>{search_heading}</h2>
 <form class="uk-form uk-form-stacked uk-margin-large uk-search uk-width-1-1" method="get" action="{site_url}/search.php">
 	<input type="hidden" name="mode" value="search">
-	<input class="uk-search" type="search" id="query" name="q" value="{query}" placeholder="{$LANG09[10]}">
-	<button class="uk-button-success" type="submit" name="submit" value="{$LANG09[10]}">{$LANG09[10]}</button>
-	<button type="button" class="uk-button-primary uk-margin-small" data-uk-toggle="{target:'#advanced'}">
+	<input class="uk-input uk-form-small uk-width-medium" type="text" id="query" name="q" value="{query}" placeholder="{$LANG09[10]}">
+	<button class="uk-button uk-button-success uk-button-small" type="submit" name="submit" value="{$LANG09[10]}">{$LANG09[10]}</button>
+	<button type="button" class="uk-button uk-button-primary uk-button-small" uk-toggle="target:#advanced">
 		{$LANG09[2]}
 	</button>
-	<div id="advanced" class="uk-hidden uk-margin-top  uk-animation-fade">
+	<div id="advanced" hidden class="uk-margin-top uk-animation-fade">
 		<div class="uk-grid uk-margin-bottom">
 			<div class="uk-width-1-5@m">
 				<label class="uk-form-label">
 					{$LANG09[70]}
 				</label>
 				<div class="uk-form-controls">
-					<select name="type">
+					<select class="uk-select uk-form-small" name="type">
 						{plugin_types}
 					</select>
 				</div>
@@ -24,7 +24,7 @@
 					{$LANG09[71]}
 				</label>
 				<div class="uk-form-controls">
-					<select name="st">
+					<select class="uk-select uk-form-small" name="st">
 						{search_time}
 					</select>
 				</div>
@@ -34,7 +34,7 @@
 					{$LANG09[72]}
 				</label>
 				<div class="uk-form-controls">
-					<select name="keyType">
+					<select class="uk-select uk-form-small" name="keyType">
 						<option value="any" {key_any_selected}>{$LANG09[45]}</option>
 						<option value="all" {key_all_selected}>{$LANG09[44]}</option>
 						<option value="phrase" {key_phrase_selected}>{$LANG09[43]}</option>
@@ -47,7 +47,7 @@
 					{$LANG09[69]}
 				</label>
 				<div class="uk-form-controls">
-					<select name="author">
+					<select class="uk-select uk-form-small" name="author">
 						{author_option_list}
 					</select>
 				</div>
@@ -58,7 +58,7 @@
 					{$LANG09[73]}
 				</label>
 				<div class="uk-form-controls">
-					<select name="results">
+					<select class="uk-select uk-form-small" name="results">
 						{search_limits}
 					</select>
 				</div>
