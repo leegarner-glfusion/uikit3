@@ -1,6 +1,6 @@
 {# begin {templatelocation} #}
 <!-- BEGIN delete-button -->
-<button class="uk-button-danger uk-button-small" type="button" value="x" onclick="glfremove(this);return false;">x</button>
+<button class="uk-button uk-button-danger uk-button-small" type="button" value="x" onclick="glfremove(this);return false;">x</button>
 <!-- END delete-button -->
 
 <!-- BEGIN text-element -->
@@ -12,7 +12,7 @@
     {unset_link}
   </td>
   <td>
-    <input type="text" style="width:80%;" name="{name}" value="{value}">
+    <input class="uk-input uk-form-small" type="text" name="{name}" value="{value}">
 {!if delete}
     <button class="uk-button-small uk-button-danger uk-margin-small" type="submit" onclick="glfremove(this);return false;" value="x">x</button>
 {!endif}
@@ -29,7 +29,7 @@
 		{unset_link}
 	</td>
 	<td>
-		<input type="password" class="opt password" style="width:80%;" name="{name}" value="{value}">
+		<input type="password" class="opt password uk-input uk-form-small" name="{name}" value="{value}">
 		<i class="uk-icon uk-icon-eye" style="cursor: pointer;" onclick="toggler(this)"></i>
 {!if delete}
 		<button class="uk-button-danger uk-button-medium del-link" onclick="glfremove(this);return false;" value="x">x</button>
@@ -61,7 +61,7 @@
 		{unset_link}
 	</td>
 	<td>
-		<select name="{name}" class="opt">
+		<select class="uk-select uk-form-small uk-form-width-medium" name="{name}" class="opt">
 	  <!-- BEGIN select-options -->
 	    <option {selected}  value="{opt_value}">{opt_name}</option>
 	  <!-- END select-options -->
@@ -79,7 +79,7 @@
     </span>
 	</td>
 	<td>
-		<button class="uk-button-primary uk-button-small" onclick="restore('{name}');return false;">{lang_enable}</button>
+		<button class="uk-button uk-button-primary uk-button-small" onclick="restore('{name}');return false;">{lang_enable}</button>
 	</td>
 </tr>
 <!-- END unset-param -->
@@ -92,10 +92,10 @@
 		</span>
 	</td>
 	<td>
-    <button class="uk-button-small uk-button-primary" onclick="hide_show_tbl(selectChildByID(this.parentNode, 'arr_table{arr_name}'), this);return false;">+</button>
+    <button class="uk-button uk-button-small uk-button-primary" onclick="hide_show_tbl(selectChildByID(this.parentNode, 'arr_table{arr_name}'), this);return false;">+</button>
 
 {!if delete}
-		<button class="uk-button-danger uk-button-medium del-link" onclick="glfremove(this);return false;" value="x">x</button>
+		<button class="uk-button uk-button-danger uk-button-medium del-link" onclick="glfremove(this);return false;" value="x">x</button>
 {!endif}
 		<input type="hidden" value="true" name="{name}[placeholder]">
 		<table class="uk-table uk-table-small" style="display:none" id="arr_table{arr_name}">
@@ -130,7 +130,7 @@
 <!-- BEGIN unkeyed-add-button -->
 <tr>
 	<td colspan="2">
-		<button class="uk-button-success uk-button-medium add_ele_input" value="{lang_add_element}" onclick="handleAdd(this, '{array_type}', '{arr_name}');return false;">{lang_add_element}</button>
+		<button class="uk-button uk-button-success uk-button-medium add_ele_input" value="{lang_add_element}" onclick="handleAdd(this, '{array_type}', '{arr_name}');return false;">{lang_add_element}</button>
 	</td>
 </tr>
 <!-- END unkeyed-add-button -->
