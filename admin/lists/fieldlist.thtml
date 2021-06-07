@@ -171,7 +171,7 @@
 <select class="uk-select uk-form-small"
 	<!-- BEGIN attr -->
 	{name}="{value}"
-	<!-- END attr -->a
+	<!-- END attr -->
 	>
 	<!-- BEGIN options -->
 	<option value="{value}" {!if selected}selected="selected"{!endif} {!if disabled}disabled="disabled"{!endif} {other}>{opt_name}</option>
