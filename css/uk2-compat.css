@@ -3,7 +3,7 @@
 /* Round the button corners like uikit v2 */
 button,
 .uk-button {
-    border-radius: 3px;
+    border-radius: 4px;
 	text-decoration: none;
 }
 /* Add the mini button size deprecated in uikit v3 */
@@ -290,4 +290,30 @@ a.uk-thumbnail:focus {
 .uk-form-width-mini {
 	width: 75px;
 }
+.uk-text-success {
+	color: #659f13!important;
+}
 
+.uk-progress-danger::-ms-fill {
+	background-color: #f0506e;
+}
+
+.uk-progress-danger::-moz-progress-bar{
+  background-color: #f0506e;
+}
+
+.uk-progress-danger::-webkit-progress-value {
+  background-color: #f0506e;
+}
+
+.uk-progress-success::-ms-fill {
+  background-color: #32d296;
+}
+
+.uk-progress-success::-moz-progress-bar{
+  background-color: #82bb42;
+}
+
+.uk-progress-success::-webkit-progress-value {
+  background-color: #82bb42;
+}
