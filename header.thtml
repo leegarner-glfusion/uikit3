@@ -20,7 +20,7 @@
                 {!!autotag uikitlogin: !!}
                 <div class="uk-navbar-item tm-navbar-item uk-visible@m">
                     <form method="get" action="{site_url}/search.php" class="uk-margin-remove uk-display-inline-block">
-                        <input type="search" class="uk-form-width-small" placeholder="{$LANG09[10]}" autocomplete="off" name="q">
+                        <input type="search" class="uk-input uk-form-small uk-form-width-small" placeholder="{$LANG09[10]}" autocomplete="off" name="q">
                         <input type="hidden" name="type" value="all">
                         <input type="hidden" name="mode" value="search">
                         <input type="hidden" name="results" value="{num_search_results}">

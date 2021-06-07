@@ -1,5 +1,5 @@
 {# begin {templatelocation} #}
-<select name="{name}">
+<select class="uk-select uk-form-xsmall uk-form-width-xsmall" name="{name}">
 	<option value="am" {!if sel_am}selected="selected"{!endif}>am</option>
 	<option value="pm" {!if sel_pm}selected="selected"{!endif}>pm</option>
 </select>

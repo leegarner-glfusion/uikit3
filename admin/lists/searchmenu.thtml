@@ -14,13 +14,13 @@
 		<div class="admin-list-search">
 			{filter}
 {!if lang_search}
-			{lang_search}: <input class="uk-form-small" type="text" id="admin-list-search" name="q" value="{last_query}">
-			<button class="uk-button uk-button-success" type="submit" value="{lang_submit}">{lang_submit}</button>
-			<button class="uk-button uk-button-danger" type="submit" value="X" title="Clear" onclick="clearsearch();">Clear</button>
+			{lang_search}: <input class="uk-input uk-form-small uk-form-width-small" type="text" id="admin-list-search" name="q" value="{last_query}">
+			<button class="uk-button uk-button-success uk-button-small" type="submit" value="{lang_submit}">{lang_submit}</button>
+			<button class="uk-button uk-button-danger uk-button-small" type="submit" value="X" title="Clear" onclick="clearsearch();">Clear</button>
 {!endif}
 {!if lang_limit_results}
 			&nbsp;&nbsp;&nbsp;&nbsp;{lang_limit_results}:
-			<select name="query_limit" onchange="this.form.submit()">
+			<select class="uk-select uk-form-small uk-form-width-xsmall" name="query_limit" onchange="this.form.submit()">
 				<option value="10" {10_selected}>10</option>
 				<option value="20" {20_selected}>20</option>
 				<option value="50" {50_selected}>50</option>

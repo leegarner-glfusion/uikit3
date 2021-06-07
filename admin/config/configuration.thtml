@@ -14,7 +14,7 @@
 		<a href="#" class="uk-navbar-toggle" uk-toggle="{target:'#admin-side-config'}"></a>
 	    <div class="uk-navbar-item">{group_name} / {subgroup_active_name} /&nbsp;</div>
 		<div class="uk-navbar-item uk-navbar-right">
-			<input type="text" name="navconfigitem" id="navautocomplete">
+			<input class="uk-input uk-form-small uk-form-width-small" type="text" name="navconfigitem" id="navautocomplete">
 	    </div>
 	</nav>
 	<div id="admin-side-config" class="uk-hidden@m" uk-offcanvas>
@@ -30,7 +30,7 @@
 
             <div class="uk-card uk-card-default uk-margin-remove-bottom">
                 <div class="uk-card-title">{lang_search}</div>
-                <input type="text" name="configitem" id="autocomplete"/>
+                <input class="uk-input uk-form-small" type="text" name="configitem" id="autocomplete"/>
             </div>
 
             <div class="uk-card uk-card-default uk-margin-small">{config_menu}</div>
