@@ -4,6 +4,16 @@ The UIkit3 theme is based on the UIKIT v3 and the glFusion CMS theme.
 
 ### Information
 
+#### Development
+  - Some UIkit2 styles have been deprecated, such as uk-button-success and some column widths.
+    uk2-compat.css is included to replaced commonly-used styles.
+  - UIKit2 icons are no longer available as UIkit3 has a much smaller set of SVG icons.
+    uk2-icons.css is included to allow use of uk-icon classes.
+  - The datepicker and timepicker components have been removed and need to be replaced by the
+    stock glFusion jquery-based date/time picker
+  - The drag-and-drop file uploader has changed significantly.
+  - The progress bar has changed significantly.
+
 #### Menu
 
 The navigation menu should be named *cms_theme*
@@ -15,10 +25,6 @@ The off-canvas menu should be named *navigation_mobile*
 Directory|Description
 ---------|-----------
 css/ |this contains the uikit CSS files. All UIKIT CSS files are stock - no modifications are made.
-css/ui-uikit/|jQuery themeroller files that are customized to look well with stock UIKIT
-css/addons/|This contains the UIKIT CSS add-on CSS files - these files should not be modified.
-js/|Contains theme specific javascript files
-js/addons/|UIKIT addon js files
 
 ### General Notes
 
