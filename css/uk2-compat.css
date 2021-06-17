@@ -290,7 +290,8 @@ a.uk-thumbnail:focus {
 .uk-form-width-mini {
 	width: 75px;
 }
-.uk-text-success {
+.uk-text-success,
+.uk-alert-success {
 	color: #659f13!important;
 }
 
