@@ -551,10 +551,12 @@ var buildPreview = function() {
     // submit handler
     function actionClick( $action ) {
         if ( $action == 'cancel' ) {
-            UIkit.modal.confirm("{$LANG24[124]}", function(){
+            UIkit.modal.confirm("{$LANG24[124]}").then(function(){
                 $('#frmstory').append("<input type='hidden' name='" + $action + "' value='clicked'>");
                 $('#frmstory').trigger('submit', [ { $action: true } ]);
-            }, function(){modifiedForm = $('#modified').val();});
+            },
+                function(){modifiedForm = $('#modified').val();}
+            );
 
         } else {
             modifiedForm = 0;
