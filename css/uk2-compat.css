@@ -30,9 +30,11 @@ button,
 .uk-button-success:hover,
 .uk-button-success:focus {
     background-color: #8fce48;
+	color: #FFF;
 }
 .uk-button-success:active {
 	background-color: #76b430;
+	color: #FFF;
 }
 
 .uk-button-mini {
