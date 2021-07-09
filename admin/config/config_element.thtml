@@ -61,7 +61,7 @@
 		{unset_link}
 	</td>
 	<td>
-		<select class="uk-select uk-form-small uk-form-width-medium" name="{name}" class="opt">
+		<select class="uk-select uk-form-small" name="{name}" class="opt">
 	  <!-- BEGIN select-options -->
 	    <option {selected}  value="{opt_value}">{opt_name}</option>
 	  <!-- END select-options -->
