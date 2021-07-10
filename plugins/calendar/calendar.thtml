@@ -1,0 +1,120 @@
+{# begin {templatelocation} #}
+<div class="uk-panel uk-panel-box uk-margin-remove">
+    <div uk-grid class="uk-child-width-1-3 uk-visible@m">
+        <div class="uk-text-center">
+            <a href="{site_url}/calendar/index.php?mode={mode}&amp;view=day" rel="nofollow">{lang_day}</a>
+        </div>
+        <div class="uk-text-center">
+            <a href="{site_url}/calendar/index.php?mode={mode}&amp;view=week" rel="nofollow">{lang_week}</a>
+        </div>
+        <div class="uk-text-center">
+            <span class="uk-text-bold">{lang_month}</span>
+        </div>
+    </div>
+
+    <div class="uk-margin-remove uk-hidden@m">
+    	<form id="viewselectform" class="uk-form" action="{site_url}/calendar/index.php" method="get">
+    		<label class="uk-form-label">{$LANG_CAL_1[53]}</label>
+    		<input type="hidden" name="mode" value="{mode}">
+    		<select class="uk-select uk-form-small uk-form-width-xsmall" id="viewselect" name="view">
+    			<option value="day">{lang_day}</option>
+    			<option value="week">{lang_week}</option>
+    			<option value="month" selected="selected">{lang_month}</option>
+    		</select>
+    	</form>
+    </div>
+
+</div>
+
+<div class="uk-grid uk-margin">
+    <div class="uk-width-1-3@m uk-hidden-small">
+        {previous_months_calendar}
+    </div>
+    <div class="uk-width-1-3@m uk-text-center">
+        <form class="uk-form" method="post" action="index.php">
+            <input type="hidden" name="mode" value="{mode}">
+            <select class="uk-select uk-form-small uk-form-width-xsmall" name="month" onchange="this.form.submit()">
+                <option value="1" {selected_jan}>{lang_january}</option>
+                <option value="2" {selected_feb}>{lang_february}</option>
+                <option value="3" {selected_mar}>{lang_march}</option>
+                <option value="4" {selected_apr}>{lang_april}</option>
+                <option value="5" {selected_may}>{lang_may}</option>
+                <option value="6" {selected_jun}>{lang_june}</option>
+                <option value="7" {selected_jul}>{lang_july}</option>
+                <option value="8" {selected_aug}>{lang_august}</option>
+                <option value="9" {selected_sep}>{lang_september}</option>
+                <option value="10" {selected_oct}>{lang_october}</option>
+                <option value="11" {selected_nov}>{lang_november}</option>
+                <option value="12" {selected_dec}>{lang_december}</option>
+            </select>&nbsp;
+            <select class="uk-select uk-form-small uk-form-width-xsmall" name="year" onchange="this.form.submit()">
+                {year_options}
+            </select>
+        </form>
+
+        <div class="uk-text-center uk-margin uk-hidden-small">
+            {add_event_option}
+        </div>
+        <div class="uk-text-center uk-margin-small uk-hidden-small">
+            {personal_calendar_option}
+            {master_calendar_option}
+        </div>
+
+    </div>
+    <div class="uk-width-1-3@m uk-hidden-small">
+        <div class="uk-align-right">{next_months_calendar}</div>
+    </div>
+</div>
+
+<div class="uk-clearfix"></div>
+
+<div id="calendar-wrap" style="clear:both;">
+  <div class="tm-calendar">
+    <ul class="weekdays">
+      <li>{lang_sunday}</li>
+      <li>{lang_monday}</li>
+      <li>{lang_tuesday}</li>
+      <li>{lang_wednesday}</li>
+      <li>{lang_thursday}</li>
+      <li>{lang_friday}</li>
+      <li>{lang_saturday}</li>
+    </ul>
+    {cal_week}
+	</div>
+</div>
+
+
+<table class="uk-table uk-text-center">
+    <tr>
+        <td>
+            <form method="post" action="index.php">
+                <input type="submit" value="&lt;&lt;" />
+                <input type="hidden" name="month" value="{cal_prevmo_num}" />
+                <input type="hidden" name="year" value="{cal_prevyr_num}" />
+                <input type="hidden" name="mode" value="{mode}" />
+            </form>
+        </td>
+        <td>
+            {add_event_option}
+        </td>
+        <td>
+            {personal_calendar_option}
+            {master_calendar_option}
+        </td>
+        <td>
+            <form method="post" action="index.php">
+                <input type="submit" value="&gt;&gt;">
+                <input type="hidden" name="month" value="{cal_nextmo_num}">
+                <input type="hidden" name="year" value="{cal_nextyr_num}">
+                <input type="hidden" name="mode" value="{mode}">
+            </form>
+        </td>
+    </tr>
+</table>
+<script>
+	$( "#viewselect" ).change(function() {
+  $( "#viewselectform" ).submit();
+});
+</script>
+{# End Calendar #}
+{# end {templatelocation} #}
