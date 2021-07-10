@@ -1,0 +1,64 @@
+{# begin {templatelocation} #}
+<div class="forumpost">
+  {navmenu}
+  <div uk-grid class="uk-margin uk-hidden@s">
+    <div class="uk-width-1-2">
+      <form uk-form class="uk-form-horizontal" action="{phpself}" method="post">
+          <select class="uk-select uk-form-small uk-form-width-small" name="filter" onchange="this.form.submit();">{filter_options}</select>
+      </form>
+    </div>
+    <div class="uk-width-1-2">
+      {select_forum}
+    </div>
+  </div>
+
+<form uk-form class="uk-form-horizontal" action="{phpself}" method="post" name="notifications">
+  <div>
+    <input type="hidden" name="op" value="" />
+    <table class="uk-table uk-table-hover uk-table-striped uk-table-condensed">
+      <tr>
+        <th>
+          <img src="{site_url}/forum/images/trash.gif" title="{LANG_deleteall}" onclick=' if(confirm("{LANG_DELALLCONFIRM}")) {document.notifications.op.value="delchecked"; document.notifications.submit();}' alt="">
+        </th>
+        <th>{LANG_Heading2}</th>
+        <th>{LANG_Heading3}</th>
+        <th class="uk-visible@m">{LANG_Heading4}</th>
+        <th class="uk-visible@m">{LANG_Heading5}</th>
+        <th class="uk-visible@m">{LANG_Heading6}</th>
+        <th class="uk-visible@m">{LANG_Heading7}</th>
+        <th>{LANG_Heading8}</th>
+      </tr>
+<!-- BEGIN notification -->
+      <tr>
+        <td>
+          <input type="checkbox" name="chkrecid[]" value="{id}">
+        </td>
+        <td class="uk-text-left">{forum}</td>
+        <td class="uk-text-left">{is_forum}&nbsp;{topic_link}</td>
+        <td class="uk-visible@m">{date_added}</td>
+        <td class="uk-visible@m">
+          {!if topicauthor}
+          <a href="{site_url}/users.php?mode=profile&amp;uid={uid}">{topicauthor}</a>
+          {!else}
+          &nbsp;
+          {!endif}
+        </td>
+        <td class="uk-visible@m">{views}</td>
+        <td class="uk-visible@m">{replies}</td>
+        <td><a href="notify.php?submit=delete&amp;id={notify_id}&amp;filter={notifytype}">{LANG_REMOVE}</a></td>
+      </tr>
+<!-- END notification -->
+    </table>
+  </div>
+</form>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="aligncenter">{pagenavigation}</td>
+    <td class="aligncenter">{bottomlink}</td>
+  </tr>
+</table>
+</div>
+<br/>
+{# end {templatelocation} #}

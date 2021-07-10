@@ -1,0 +1,216 @@
+{# begin {templatelocation} #}
+<script>
+	var site_url = '{site_url}';
+</script>
+<script>
+	$(document).ready(function(){
+		$("#subscribe-link").click(function(e){
+			e.preventDefault();
+			$.ajax({type: "POST",
+				dataType: "json",
+				url: "{site_url}/forum/ajax_controller.php",
+				data: { id: $("#forum_id").val(), action: $("#suboption").val() },
+				success: function(data) {
+					var result = $.parseJSON(data["json"]);
+					$("#suboption").prop('value', result.subOption);
+					$("#subscribe-icon").prop('class',result.icon);
+					$("#subscribe-text").html(result.label);
+					$.UIkit.notify("<i class='uk-icon-check'></i>&nbsp;" + result.statusMessage, {timeout: 3000,pos:'top-center'});
+				}
+			});
+		});
+		$('.bookmark').click(function(e) {
+			var id = e.target.id;
+			$.ajax({type: "POST",
+				dataType: "json",
+				url: "{site_url}/forum/ajax_controller.php",
+				data: {id : id, action: 'bookmark' },
+				success: function(data) {
+					var result = $.parseJSON(data["json"]);
+					if ( result.bookmark_image == 'open' ) {
+						var star = 'uk-icon-star-o';
+						var old  = 'uk=icon-star';
+					} else {
+						var star = 'uk-icon-star';
+						var old = 'uk-icon-star-o';
+					}
+					$('#' + result.id).removeClass(old);
+					$('#' + result.id).addClass(star);
+				}
+			});
+		});
+	});
+</script>
+<div class="forumpost">
+
+	<div class="uk-grid">
+		<div class="uk-width-1-1@m uk-text-left">
+			<ul class="uk-breadcrumb uk-margin-remove">
+				<li><i class="uk-icon-home"></i></li>
+				<li><a href="{site_url}/forum/index.php">{forum_home}</a></li>
+				<li><a href="{site_url}/forum/index.php?cat={cat_id}">{cat_name}</a></li>
+				<li class="uk-active"><a href="{site_url}/forum/index.php?forum={forum_id}">{forum_name}</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="uk-align-left uk-text-left uk-margin-small">
+{!if newtopiclink}
+		<a href="{newtopiclink}" rel="nofollow" class="uk-button uk-button-small uk-button-primary">
+			<i class="uk-icon-file-o"></i>&nbsp;&nbsp;{LANG_newtopic}
+		</a>
+{!endif}
+
+{!!if {markreadurl} != "" || {subscribelink} != "" || {forumsubscribed} != "" !!}
+		<div class="uk-button-dropdown" data-uk-dropdown="{mode:'click'}">
+			<button class="uk-button uk-button-small"><i class="uk-icon-cog"></i>&nbsp;<i class="uk-icon-caret-down"></i></button>
+			<div class="uk-dropdown uk-dropdown-small">
+				<ul class="uk-nav uk-nav-dropdown">
+{!if markreadurl}
+					<li><a href="{markreadurl}" rel="nofollow"><i class="uk-icon-ellipsis-h"></i>&nbsp;&nbsp;{LANG_markread}</a></li>
+{!endif}
+{!if subscribelink}
+					<li>
+						<a id="subscribe-link" href="{subscribelink}" rel="nofollow">
+							<input type="hidden" id="forum_id" value="{forum}">
+							<input type="hidden" id="suboption" value="{suboption}">
+							<input type="hidden" id="{token_name}" name="{token_name}" value="{token}">
+{!if forumsubscribed}
+							<i id="subscribe-icon" class="uk-icon-bookmark-o" title="{LANG_subscribe}"></i>&nbsp;<span id="subscribe-text">{LANG_subscribe}</span>
+{!else}
+							<i id="subscribe-icon" class="uk-icon-bookmark" title="{LANG_subscribe}"></i>&nbsp;<span id="subscribe-text">{LANG_subscribe}</span>
+{!endif}
+						</a>
+					</li>
+{!endif}
+				</ul>
+			</div>
+		</div>
+{!endif}
+	</div>
+	<div class="uk-text-small uk-align-right uk-text-right uk-margin-small">
+		{pagenavigation}
+	</div>
+
+	<div class="uk-clearfix"></div>
+
+{!if records_displayed}
+
+	<ul class="topiclist tm-forum-header">
+		<li class="header">
+			<dl class="icon">
+				<dt>
+					<a href="{site_url}/forum/index.php?forum={forum_id}&amp;order={new_sort_order}&amp;sort=1" rel="nofollow">
+						{LANG_TOPIC}
+{!if sort_subject}
+{!if sort_asc}
+  <i class="uk-icon-caret-up"></i>
+{!else}
+  <i class="uk-icon-caret-down"></i>
+{!endif}
+{!endif}
+					</a>
+{!if rssfeed}
+					<a class="uk-icon-rss-square uk-icon-small uk-text-warning" href="{rssfeed_url}" rel="nofollow"></a>
+{!endif}
+				</dt>
+				<dd class="topics uk-visible@m">
+					<a href="{site_url}/forum/index.php?forum={forum_id}&amp;order={new_sort_order}&amp;sort=2" rel="nofollow">
+						{LANG_VIEWS}
+{!if sort_views}
+{!if sort_asc}
+  <i class="uk-icon-caret-up"></i>
+{!else}
+  <i class="uk-icon-caret-down"></i>
+{!endif}
+{!endif}
+					</a>
+				</dd>
+				<dd class="posts uk-visible@m">
+					<a href="{site_url}/forum/index.php?forum={forum_id}&amp;order={new_sort_order}&amp;sort=3" rel="nofollow">
+						{LANG_REPLIES}
+{!if sort_replies}
+{!if sort_asc}
+  <i class="uk-icon-caret-up"></i>
+{!else}
+  <i class="uk-icon-caret-down"></i>
+{!endif}
+{!endif}
+					</a>
+				</dd>
+				<dd class="lastpost">
+					<a href="{site_url}/forum/index.php?forum={forum_id}&amp;order={new_sort_order}&amp;sort=5" rel="nofollow">
+						{LANG_LASTPOST}
+					</a>
+{!if sort_lastupdated}
+{!if sort_asc}
+  <i class="uk-icon-caret-up"></i>
+{!else}
+  <i class="uk-icon-caret-down"></i>
+{!endif}
+{!endif}
+
+				</dd>
+			</dl>
+		</li>
+	</ul>
+
+	<ul class="topiclist topics">
+<!-- BEGIN topicrows -->
+		<li class="row">
+			<dl class="icon" style="background-image: url({folder_icon}); background-repeat: no-repeat;">
+				<dt class="uk-text-truncate" onmouseover="this.style.cursor='pointer';" onclick="window.location.href='{site_url}/forum/viewtopic.php?showtopic={topic_id}&amp;lastpost=true#{lastpostid}'; this.style.cursor='pointer';">
+					{moved}
+					<a class="tooltip topictitle" href="{site_url}/forum/viewtopic.php?showtopic={topic_id}" title="{topicinfo}">
+						{subject}
+					</a>
+					<div class="uk-visible@m">
+						<span class="uk-align-right">{gotomsg}&nbsp;{displaypageslink}</span>
+						<div style="font-size:.9em;padding-bottom:5px;">by {author} <i class="uk-icon-long-arrow-right uk-icon-mini"></i>&nbsp;{startdate}</div>
+					</div>
+					<div class="uk-hidden@m uk-text-medium" style="font-size:.9em;">
+						<div>{LANG_LASTPOST} by {lastposter} <i class="uk-icon-long-arrow-right uk-icon-mini"></i>&nbsp;{lastdate}</div>
+						<div class="uk-float-left">
+							{LANG_REPLIES}: {replies}
+						</div>
+						<div class="uk-float-right">
+							<span class="uk-align-right" style="font-size:1em;">{gotomsg}&nbsp;{displaypageslink}</span>
+						</div>
+					</div>
+				</dt>
+				<dd class="topics uk-visible@m">{views}</dd>
+				<dd class="posts uk-visible@m">{replies}</dd>
+				<dd class="lastpost" onmouseover="this.style.cursor='pointer';" onclick="window.location.href='{site_url}/forum/viewtopic.php?showtopic={topic_id}&amp;lastpost=true#{lastpostid}'" title="{LANG_lastpost}">
+					{LANG_BY}{lastposter}<br>
+					{lastdate}
+				</dd>
+			</dl>
+		</li>
+
+	{!if adblock}
+			<li class="row">
+				<dl>
+				<div class="uk-text-center uk-margin-top">{adblock}</div>
+				</dl>
+			</li>
+	{!endif}
+
+<!-- END topicrows -->
+	</ul>
+{!else}
+  <div class="uk-alert uk-alert-warning uk-margin uk-text-center">
+    <em>{$LANG_GF02[msg05]}</em>
+  </div>
+{!endif}
+	<div class="uk-grid uk-width-1-1 uk-margin">
+		<div class="uk-width-1-2@m uk-visible@m">
+			<div class="uk-text-small uk-text-muted">{page_generated_time}</div>
+		</div>
+		<div class="uk-width-1-2@m uk-small-1-1">
+			<div class="uk-align-right uk-text-right uk-margin-small uk-text-small">
+				{pagenavigation}
+			</div>
+		</div>
+	</div>
+</div>
+{# end {templatelocation} #}
