@@ -320,3 +320,52 @@ a.uk-thumbnail:focus {
 .uk-progress-success::-webkit-progress-value {
   background-color: #82bb42;
 }
+
+.uk-panel-box {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.uk-panel-box-hover:hover {
+  color: #444;
+}
+.uk-panel-box .uk-panel-title {
+  color: #444;
+}
+.uk-panel-box .uk-panel-badge {
+  top: 10px;
+  right: 10px;
+}
+/*
+ * Sub-modifier: `uk-panel-box-primary`
+ */
+.uk-panel-box-primary {
+  background-color: #ebf7fd;
+  color: #2d7091;
+}
+.uk-panel-box-primary-hover:hover {
+  color: #2d7091;
+}
+.uk-panel-box-primary .uk-panel-title {
+  color: #2d7091;
+}
+/*
+ * Sub-modifier: `uk-panel-box-secondary`
+ */
+.uk-panel-box-secondary {
+  background-color: #eee;
+  color: #444;
+}
+.uk-panel-box-secondary-hover:hover {
+  color: #444;
+}
+.uk-panel-box-secondary .uk-panel-title {
+  color: #444;
+}
+.uk-form-help-inline {
+  display: inline-block;
+  margin: 0 10px 0 10px;
+}
+.uk-form-help-block {
+  margin: 5px 0 0 0;
+}
+
