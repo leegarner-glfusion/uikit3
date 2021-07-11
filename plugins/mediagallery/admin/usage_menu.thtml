@@ -1,0 +1,25 @@
+{# begin {templatelocation} #}
+<form uk-form class="uk-form-horizontal" method="post" action="{s_form_action}">
+	<div class="uk-margin">
+		<label class="uk-form-label">{lang_select_date}</label>
+		<div class="uk-form-controls uk-form-controls-text">
+			{month_select}&nbsp;
+			{day_select}&nbsp;
+			{year_select}&nbsp;&nbsp;
+			<input class="uk-checkbox" type="checkbox" name="alldates">&nbsp;<span class="uk-text-bold">{lang_all_dates}</span>
+		</div>
+	</div>
+
+	<div class="uk-margin">
+		<label class="uk-form-label">{lang_select_user}</label>
+		<div class="uk-form-controls uk-form-controls-text">
+			{user_select}
+		</div>
+	</div>
+
+	<div class="uk-margin uk-text-center">
+		<button class="uk-button uk-button-primary" type="submit" name="mode" value="{lang_submit}">{lang_submit}</button>
+	</div>
+
+</form>
+{# end {templatelocation} #}

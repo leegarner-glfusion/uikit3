@@ -1,0 +1,24 @@
+{# begin {templatelocation} #}
+	<fieldset>
+		<label>{lang_featured_album}</label>
+
+		<div class="uk-margin">
+			<label class="uk-form-label" for="enable_comments">{lang_set_featured}</label>
+			<div class="uk-form-controls uk-form-controls-text">
+				{featured_select}
+			</div>
+		</div>
+		<div class="uk-margin">
+			<label class="uk-form-label" for="enable_comments">{lang_position}</label>
+			<div class="uk-form-controls uk-form-controls-text">
+				{feature_position}
+			</div>
+		</div>
+		<div class="uk-margin">
+			<label class="uk-form-label" for="enable_comments">{lang_topic}</label>
+			<div class="uk-form-controls uk-form-controls-text">
+				{feature_page_select}
+			</div>
+		</div>
+	</fieldset>
+{# end {templatelocation} #}
