@@ -14,14 +14,6 @@
 {!endif}
 	</div>
 
-	<div class="uk-visible@m">
-		<form uk-form method="get" action="{site_url}/search.php" class="uk-search uk-margin-remove uk-display-inline-block" style="display: inline-block !important;">
-			<input type="search" class="uk-input uk-form-small uk-form-width-medium uk-search uk-search-field" placeholder="{$LANG09[10]}" autocomplete="off" name="keywords">
-			<input type="hidden" name="mode" value="search">
-			<input type="hidden" name="swhere" value="0">
-		</form>
-	</div>
-
 {!if select_adminbox}
 	<div class="uk-visible@m">
 		<form class="uk-form uk-margin-remove uk-display-inline-block" name="adminbox" id="adminbox" action="{site_url}/admin.php" method="get">
@@ -41,6 +33,15 @@
 		</div>
 	</div>
 {!endif}
+
+	<div class="uk-visible@m">
+		<form uk-form method="get" action="{site_url}/search.php" class="uk-search uk-margin-remove uk-display-inline-block" style="display: inline-block !important;">
+			<input type="search" class="uk-input uk-form-small uk-form-width-medium uk-search uk-search-field" placeholder="{$LANG09[10]}" autocomplete="off" name="keywords">
+			<input type="hidden" name="mode" value="search">
+			<input type="hidden" name="swhere" value="0">
+		</form>
+	</div>
+
 </div>
 
 <div uk-grid class="uk-margin">
