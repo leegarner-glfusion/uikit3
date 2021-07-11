@@ -1,6 +1,6 @@
 {# begin {templatelocation} #}
 	<fieldset>
-		<label>{lang_featured_album}</label>
+		<legend>{lang_featured_album}</legend>
 
 		<div class="uk-margin">
 			<label class="uk-form-label" for="enable_comments">{lang_set_featured}</label>
