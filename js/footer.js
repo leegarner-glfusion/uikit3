@@ -18,7 +18,7 @@ $(window).load(function(){
 		});
 	});
 });
-$('video,audio').mediaelementplayer({
+/*$('video,audio').mediaelementplayer({
 	// if the <video width> is not specified, this is the default
 	defaultVideoWidth: 480,
 	// if the <video height> is not specified, this is the default
@@ -82,6 +82,7 @@ UIkit.modal.help = function(content, options) {
 	});
 	return modal.show();
 };
+*/
 $('.block-help-icon').on('click', function(e) {
 	e.preventDefault();
 	var help_url = $(this).attr('href');
