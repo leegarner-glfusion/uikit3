@@ -383,3 +383,14 @@ a.uk-thumbnail:focus {
   margin: 5px 0 0 0;
 }
 
+/* uk-badge modifiers */
+.uk-badge-success {
+  background-color: #8cc14c;
+}
+.uk-badge-warning {
+  background-color: #faa732;
+}
+.uk-badge-danger {
+  background-color: #da314b;
+}
+
